@@ -64,4 +64,24 @@ public class CaseDemoController {
         List<CaseDemo> caseDemoList = caseDemoService.selectRecommendCase(map);
         return Result.toResult(ResultCode.SUCCESS,caseDemoList);
     }
+
+    /**
+     * 获取案例详情
+     * @param id
+     * @param model
+     * @return
+     */
+    @RequestMapping("/detail/{id}")
+    public String getDetail(@PathVariable("id") Integer id, Model model){
+        CaseDemo caseDemo = caseDemoService.selectByPrimaryKey(id);
+        model.addAttribute("caseDemo", caseDemo);
+        List<FriendshipLink> links = friendshipLinkService.getLinks();
+        JSONObject companys = comService.getInfo();
+        model.addAttribute("friends", links);
+        model.addAttribute("companys", companys);
+        Map<Object, Object> map = new HashMap<>();
+        List<CaseDemo> caseDemoList = caseDemoService.selectRecommendCase(map);
+        model.addAttribute("caseDemoList", caseDemoList);
+        return "anlixiangqing.html";
+    }
 }
