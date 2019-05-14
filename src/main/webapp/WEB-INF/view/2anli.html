@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -13,16 +13,16 @@
 		<div class="nav-neirong">
 			<img src="../../static/img/logo.png">
     		<div>
-    			<li><a href="index.html">首页</a></li> 
-            <li><a href="2anli.html" style="color: #036eb8;">服务&案例</a>
+    			<li><a th:href="@{/index}">首页</a></li>
+            <li><a th:href="@{/service}" style="color: #036eb8;">服务&案例</a>
                 <ul>
-                    <li><a href="app.html">APP开发</a></li>
-                    <li><a href="wangzhan.html">网站建设</a></li>
-                    <li><a href="weixin.html">微信小程序</a></li>
+					<li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
+					<li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
+					<li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
                 </ul>
             </li>
             <li><a href="4xinwen.html">新闻&动态</a></li> 
-            <li><a href="5zhaopin.html">招贤纳士</a></li>
+            <li><a th:href="@{/human/list}">招贤纳士</a></li>
             <li><a href="6lianxi.html">联系我们</a></li> 
     		</div>
     </div>
@@ -38,11 +38,11 @@
 </div>
 <div id="nav3">
 	<div>
-		<a href="index.html">首页</a>
-		<a href="2anli.html" style="color: #036eb8;">服务&案例</a>
+		<a th:href="@{/index}">首页</a>
+		<a th:href="@{/service}" style="color: #036eb8;">服务&案例</a>
        
         <a href="4xinwen.html">新闻&动态</a>
-        <a href="5zhaopin.html">招贤纳士</a>
+        <a th:href="@{/human/list}">招贤纳士</a>
         <a href="6lianxi.html">联系我们</a>
 	</div>
 </div>
@@ -61,53 +61,61 @@
 <div class="banner2"></div>
 
 <div class="anli">
-	<a href="app.html">
+	<a th:href="@{'/caseDemo/' + ${services[0].type}}">
 	<div class="anli-app">
-		<img src="../../static/img/anli1.png">
+		<img th:src="${services[0].imgLink}">
 		<div>
-			<h5>APP开发</h5>
+			<h5 th:if="${services[0].type} == 0 ">APP开发</h5>
+			<h5 th:if="${services[0].type} == 1 ">网站建设</h5>
+			<h5 th:if="${services[0].type} == 2 ">微信小程序</h5>
 			<i></i>
-			<h6>卓越的交互体验 为更广阔的移动营销而生</h6>
-			<p>经典智能科技APP开发为传统企业转型升级，提供个性化的移动应用定制开发服务、商业模式咨询、用户体验设计、交互设计，移动应用技术研发和推广运营服务。</p>
+			<h6 th:text="${services[0].bb}"></h6>
+			<p th:text="${services[0].describe}"></p>
 			<span>查看案例</span>
 		</div>
 		
 	</div>
 	</a>
-	
-	<a href="wangzhan.html">
-	<div class="anli-wangzhan">
-		<img src="../../static/img/anli2.png">
-		<div>
-			<h5>高端网站建设</h5>
+
+	<a th:href="@{'/caseDemo/' + ${services[1].type}}">
+		<div class="anli-wangzhan">
+			<img th:src="${services[1].imgLink}">
+			<div>
+			<h5 th:if="${services[1].type} == 0 ">APP开发</h5>
+			<h5 th:if="${services[1].type} == 1 ">网站建设</h5>
+			<h5 th:if="${services[1].type} == 2 ">微信小程序</h5>
 			<i></i>
-			<h6>十余年建站经验 以实力为专业注解</h6>
-			<p>互联网作为唯一一种全天候24小时不间断的媒体平台是传统媒体 可望不可及 的。作为一个企业，在建立自己的网站，最显而易见的就是可以向世界展示自己的企业风采，让更多人了解自己的企业，使企业能够在公众知名度上有一定的提升。</p>
+			<h6 th:text="${services[1].bb}"></h6>
+			<p th:text="${services[1].describe}"></p>
 			<span>查看案例</span>
 		</div>
 		
 	</div>
-	</a>	
+	</a>
 
-	<a href="weixin.html">
+	<a th:href="@{'/caseDemo/' + ${services[2].type}}">
 	<div class="anli-weixin">
-		<img src="../../static/img/anli3.png">
+		<img th:src="${services[2].imgLink}">
 		<div>
-			<h5>微信小程序</h5>
+			<h5 th:if="${services[2].type} == 0 ">APP开发</h5>
+			<h5 th:if="${services[2].type} == 1 ">网站建设</h5>
+			<h5 th:if="${services[2].type} == 2 ">微信小程序</h5>
 			<i></i>
-			<h6>人人都离不开微信 也离不开微信小程序</h6>
+			<h6 th:text="${services[2].bb}"></h6>
 			<span>查看案例</span>
 		</div>
 	</div>
-	</a>	
-	
-	<a href="3fangan.html">
+	</a>
+
+	<a th:href="@{'/caseDemo/' + ${services[3].type}}">
 	<div class="anli-fangan">
-		<img src="../../static/img/anli4.png">
+		<img th:src="${services[3].imgLink}">
 		<div>
-			<h5>解决方案定制</h5>
+			<h5 th:if="${services[3].type} == 0 ">APP开发</h5>
+			<h5 th:if="${services[3].type} == 1 ">网站建设</h5>
+			<h5 th:if="${services[3].type} == 2 ">微信小程序</h5>
 			<i></i>
-			<h6>抓住眼球 深入人心 以实力为专业注解</h6>
+			<h6 th:text="${services[3].bb}"></h6>
 			<span>查看案例</span>
 		</div>
 	</div>
@@ -120,22 +128,23 @@
 	<div class="di-kuang">
 		<div class="di-kuang-left">
 			<div class="di-kuang-left1">
-				<a href="index.html">网站首页</a>
-				<a href="2anli.html">客户案例</a>
+				<a th:href="@{/index}">网站首页</a>
+				<a th:href="@{/service}">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
-				<a href="5zhaopin.html">招贤纳士</a>
+				<a th:href="@{/human/list}">招贤纳士</a>
 				<a href="6lianxi.html">联系我们</a>
 			</div>
 			<p>友情链接</p>
 			<div class="di-kuang-left2">
-				<a href="#">糖醋里脊科技</a>
-				<a href="#">芝麻数据</a>
+				<div th:each="links : ${friends}" style="float: left">
+					<a th:text="${links.title}" th:href="${links.href}"></a>
+				</div>
 			</div>
 		</div>
 		<div class="di-kuang-right">
-			<h1>山东麦贝网络技术有限公司</h1>
-			<p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
-			<p>0537-6506777&nbsp;&nbsp;18563715777</p>
+			<h1 th:text="${companys.companyName}"></h1>
+			<p th:text="${companys.address}"></p>
+			<p th:text="${companys.phone}"></p>
 		</div>
 	</div>
 	<div class="di1">

@@ -1,11 +1,17 @@
 package com.zh.program.Controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zh.program.Common.enums.ResultCode;
 import com.zh.program.Dto.Result;
+import com.zh.program.Entrty.FriendshipLink;
 import com.zh.program.Entrty.ServiceProvider;
+import com.zh.program.Service.CompanyinformationService;
+import com.zh.program.Service.FriendshipLinkService;
 import com.zh.program.Service.ServiceProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,38 +26,25 @@ public class ServiceProviderController {
 
     @Autowired
     private ServiceProviderService sps;
+    @Autowired
+    private FriendshipLinkService friendshipLinkService;
+    @Autowired
+    private CompanyinformationService comService;
 
-    @RequestMapping("/type")
-    public String getType(Integer type){
-        if(!"".equals(type) && type != null){
-            if (type == 0){
-                return "app.html";
-            }else if (type == 1){
-                return "wangzhan.html";
-            }else if (type == 2){
-                return "weixin.html";
-            }
-        }
-        return "";
-    }
 
     /**
      * 获取服务类型案例 0:APP开发,1:网站建设,2:微信小程序
      */
-    @ResponseBody
-    @RequestMapping("/list")
-    public String getAll(){
+    @RequestMapping("")
+    public String getAll(Model model){
         Map<Object, Object> map = new HashMap<>();
         List<ServiceProvider> list = sps.selectAll(map);
-        List<ServiceProvider> serviceProviders = new LinkedList<>();
-        for (ServiceProvider serviceProvider:list) {
-            ServiceProvider serviceProvider1 = new ServiceProvider();
-            serviceProvider1.setId(serviceProvider.getId());
-            serviceProvider1.setType(serviceProvider.getType());
-            serviceProvider1.setImgLink(serviceProvider.getImgLink());
-            serviceProviders.add(serviceProvider);
-        }
-        return Result.toResult(ResultCode.SUCCESS, serviceProviders);
+        model.addAttribute("services", list);
+        List<FriendshipLink> links = friendshipLinkService.getLinks();
+        JSONObject companys = comService.getInfo();
+        model.addAttribute("friends", links);
+        model.addAttribute("companys", companys);
+        return "2anli.html";
     }
 
 }

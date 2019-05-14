@@ -17,9 +17,9 @@
     			<li><a th:href="@{/index}" style="color: #036eb8;">首页</a></li>
             <li><a href="2anli.html">服务&案例</a>
                 <ul>
-                    <li><a href="app.html">APP开发</a></li>
-                    <li><a href="wangzhan.html">网站建设</a></li>
-                    <li><a href="weixin.html">微信小程序</a></li>
+                    <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
+                    <li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
+                    <li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
                 </ul>
             </li>
             <li><a href="4xinwen.html">新闻&动态</a></li> 
@@ -40,7 +40,7 @@
 <div id="nav3">
 	<div>
 		<a th:href="@{/index}" style="color: #036eb8;">首页</a>
-		<a href="2anli.html">服务&案例</a>
+		<a th:href="@{/server}">服务&案例</a>
         <a href="4xinwen.html">新闻&动态</a>
         <a th:href="@{/human/list}">招贤纳士</a>
         <a href="6lianxi.html">联系我们</a>
@@ -122,7 +122,7 @@
                 </div>
 
 	</div>
-	<a href="2anli.html"><div class="gengduo">
+	<a th:href="@{/server}"><div class="gengduo">
 		<p>查看更多案例</p>
 		<img src="../../static/img/jiantou.png" />
 	</div></a>
@@ -234,7 +234,7 @@
 		<div class="di-kuang-left">
 			<div class="di-kuang-left1">
 				<a th:href="@{/index}">网站首页</a>
-				<a href="2anli.html">客户案例</a>
+				<a th:href="@{/server}">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
 				<a th:href="@{/human/list}">招贤纳士</a>
 				<a href="6lianxi.html">联系我们</a>
