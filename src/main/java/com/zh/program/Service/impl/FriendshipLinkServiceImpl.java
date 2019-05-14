@@ -3,6 +3,9 @@ package com.zh.program.Service.impl;
 import com.zh.program.Dao.FriendshipLinkMapper;
 import com.zh.program.Entrty.FriendshipLink;
 import com.zh.program.Service.FriendshipLinkService;
+
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
@@ -65,5 +68,19 @@ public class FriendshipLinkServiceImpl implements FriendshipLinkService {
     @Override
     public int selectCount(Map<Object, Object> param) {
         return this.friendshipLinkMapper.selectCount(param);
+    }
+
+    @Override
+    public List<FriendshipLink> getLinks() {
+        Map<Object, Object> map = new HashMap<>();
+        List<FriendshipLink> flList = this.friendshipLinkMapper.selectAll(map);
+        List<FriendshipLink> links = new LinkedList<>();
+        for (FriendshipLink friendshipLink: flList) {
+            FriendshipLink fl = new FriendshipLink();
+            fl.setTitle(friendshipLink.getTitle());
+            fl.setHref(friendshipLink.getHref());
+            links.add(fl);
+        }
+        return links;
     }
 }

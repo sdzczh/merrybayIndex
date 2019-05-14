@@ -1,5 +1,6 @@
 package com.zh.program.Service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.zh.program.Entrty.Companyinformation;
 import java.util.List;
 import java.util.Map;
@@ -81,4 +82,10 @@ public interface CompanyinformationService {
      * @date: 2019-05-09 11:24:51
      **/ 
     int selectCount(Map<Object, Object> param);
+
+    /**
+     * 获取公司信息  名称 手机 地址 福利 邮箱
+     * @return
+     */
+    JSONObject getInfo();
 }

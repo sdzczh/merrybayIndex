@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -62,55 +62,35 @@
 <div class="zhao">
 	<div class="zhao-left">
 		<div class="zhao1">
-			<p class="team2">技术</p>
-			<p class="team1">销售</p>
-			<p class="team1">行政</p>
+			<a th:href="@{/human/list/0}"><p th:class="${category} == 0 ? 'team2' : 'team1'">技术</p></a>
+			<a th:href="@{/human/list/1}"><p th:class="${category} == 1 ? 'team2' : 'team1'">销售</p></a>
+			<a th:href="@{/human/list/2}"><p th:class="${category} == 2 ? 'team2' : 'team1'">行政</p></a>
 		</div>
-		<div class="zhao2">
-			<div class="zhao3">
-				<span>发布日期：2018-01-01 18:00</span>
-				<span>工作地点：山东 济宁</span>
-				<span>招聘人数：若干</span>
-				<span>工作经验：两年以上</span>
+		<tr th:each="human : ${humans}">
+			<div class="zhao2">
+				<div class="zhao3">
+					<span th:text="'发布日期：' + ${#dates.format(human.updateTime, 'yyyy-MM-dd')}"></span>
+					<span th:text="'工作地点：' + ${human.place}"></span>
+					<span th:text="'招聘人数：' + ${human.num}"></span>
+					<span th:text="'工作经验：' + ${human.year} + '年以上'"></span>
+				</div>
+				<div class="zhao4">
+					<h6 th:text="${human.jobsName}"></h6>
+					<p>岗位要求：</p>
+					<span th:text="${human.jobsRequire}"></span>
+					<p>岗位职责：</p>
+					<span th:text="${human.jobsDuty}"></span>
+				</div>
 			</div>
-			<div class="zhao4">
-				<h6>大数据开发工程师</h6>
-				<p>岗位要求：</p>
-				<span>1.计算机相关本科及以上学历，两年以上同岗位经验</span>
-				<span>2.熟悉Linux/Unix系统，熟练掌握Shell/Python/Java/Scala编程（至少一种）；</span>
-				<span>3.扎实的java基础，熟悉java web开发，熟悉restful服务设计开发；</span>
-				<span>4.熟悉分布式系统的设计开发和大数据平台工具的使用和开发，如：Mapreduce/Hive/Spark/kafka/HDFS/HBase等；</span>
-				<p>岗位职责：</p>
-				<span>1.负责日常项目及大数据平台开发工作；</span>
-				<span>2.负责系统模块的设计，重构，技术文档撰写；</span>
-			</div>
-		</div>
-		<div class="zhao2">
-			<div class="zhao3">
-				<span>发布日期：2018-01-01 18:00</span>
-				<span>工作地点：山东 济宁</span>
-				<span>招聘人数：若干</span>
-				<span>工作经验：两年以上</span>
-			</div>
-			<div class="zhao4">
-				<h6>大数据开发工程师</h6>
-				<p>岗位要求：</p>
-				<span>1.计算机相关本科及以上学历，两年以上同岗位经验</span>
-				<span>2.熟悉Linux/Unix系统，熟练掌握Shell/Python/Java/Scala编程（至少一种）；</span>
-				<span>3.扎实的java基础，熟悉java web开发，熟悉restful服务设计开发；</span>
-				<p>岗位职责：</p>
-				<span>1.负责日常项目及大数据平台开发工作；</span>
-				<span>2.负责系统模块的设计，重构，技术文档撰写；</span>
-			</div>
-		</div>
+		</tr>
 		
 		
 	</div>
 	<div class="zhao-right">
 		<p>联系方式：</p>
-		<span>邮箱：18563715777@163.com</span>
-		<span>电话：0537-6506777</span>
-		<span>双休，法定节假日，年终奖金，项目奖金，社保缴纳，出差补助</span>
+		<span th:text="${'邮箱：' + companyInfo.email}"></span>
+		<span th:text="${'电话：' + companyInfo.phone}"></span>
+		<span th:text="${'福利：' + companyInfo.welfare}"></span>
 	</div>
 	
 </div>
@@ -129,14 +109,15 @@
 			</div>
 			<p>友情链接</p>
 			<div class="di-kuang-left2">
-				<a href="#">糖醋里脊科技</a>
-				<a href="#">芝麻数据</a>
+				<div th:each="links : ${friends}" style="float: left">
+					<a th:text="${links.title}" th:href="${links.href}"></a>
+				</div>
 			</div>
 		</div>
 		<div class="di-kuang-right">
-			<h1>山东麦贝网络技术有限公司</h1>
-			<p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
-			<p>0537-6506777&nbsp;&nbsp;18563715777</p>
+			<h1 th:text="${companyInfo.companyName}"></h1>
+			<p th:text="${companyInfo.address}"></p>
+			<p th:text="${companyInfo.phone}"></p>
 		</div>
 	</div>
 	<div class="di1">

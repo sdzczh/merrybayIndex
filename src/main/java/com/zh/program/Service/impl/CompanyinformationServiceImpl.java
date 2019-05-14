@@ -1,8 +1,13 @@
 package com.zh.program.Service.impl;
 
+import com.alibaba.fastjson.JSONObject;
+import com.zh.program.Common.enums.ResultCode;
 import com.zh.program.Dao.CompanyinformationMapper;
+import com.zh.program.Dto.Result;
 import com.zh.program.Entrty.Companyinformation;
 import com.zh.program.Service.CompanyinformationService;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
@@ -65,5 +70,22 @@ public class CompanyinformationServiceImpl implements CompanyinformationService 
     @Override
     public int selectCount(Map<Object, Object> param) {
         return this.companyinformationMapper.selectCount(param);
+    }
+
+    @Override
+    public JSONObject getInfo() {
+        Map<Object, Object> map = new HashMap<>();
+        List<Companyinformation> comList = this.companyinformationMapper.selectAll(map);
+        if (comList.size() == 0){
+            return null;
+        }
+        Companyinformation companyinformation = comList.get(0);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("companyName",companyinformation.getCompanyName());
+        jsonObject.put("address",companyinformation.getAddress());
+        jsonObject.put("phone",companyinformation.getPhone());
+        jsonObject.put("welfare",companyinformation.getWelfare());
+        jsonObject.put("email",companyinformation.getEmail());
+        return jsonObject;
     }
 }

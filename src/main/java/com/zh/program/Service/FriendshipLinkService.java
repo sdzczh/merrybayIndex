@@ -81,4 +81,10 @@ public interface FriendshipLinkService {
      * @date: 2019-05-09 11:24:38
      **/ 
     int selectCount(Map<Object, Object> param);
+
+    /**
+     * 获取友情链接列表
+     * @return
+     */
+    List<FriendshipLink> getLinks();
 }
