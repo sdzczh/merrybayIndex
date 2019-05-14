@@ -137,9 +137,9 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" parameterType="java.util.Map" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from partners
+    select
+    id, img_name, img_link, pa.describe, link, aa, bb, create_time, update_time
+    from partners pa
     where 1=1 
     <if test="imgName != null">
        and  img_name = #{imgName,jdbcType=VARCHAR}

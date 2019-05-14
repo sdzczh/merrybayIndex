@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -14,7 +14,7 @@
 		<div class="nav-neirong">
 			<img src="../../static/img/logo.png">
     		<div>
-    			<li><a href="index.html" style="color: #036eb8;">首页</a></li> 
+    			<li><a th:href="@{/index}" style="color: #036eb8;">首页</a></li>
             <li><a href="2anli.html">服务&案例</a>
                 <ul>
                     <li><a href="app.html">APP开发</a></li>
@@ -23,7 +23,7 @@
                 </ul>
             </li>
             <li><a href="4xinwen.html">新闻&动态</a></li> 
-            <li><a href="5zhaopin.html">招贤纳士</a></li>
+            <li><a th:href="@{/human/list}">招贤纳士</a></li>
             <li><a href="6lianxi.html">联系我们</a></li> 
     		</div>
     </div>
@@ -39,10 +39,10 @@
 </div>
 <div id="nav3">
 	<div>
-		<a href="index.html" style="color: #036eb8;">首页</a>
+		<a th:href="@{/index}" style="color: #036eb8;">首页</a>
 		<a href="2anli.html">服务&案例</a>
         <a href="4xinwen.html">新闻&动态</a>
-        <a href="5zhaopin.html">招贤纳士</a>
+        <a th:href="@{/human/list}">招贤纳士</a>
         <a href="6lianxi.html">联系我们</a>
 	</div>
 </div>
@@ -61,9 +61,9 @@
 <!--banner  -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../../static/img/banner1.png"></div>
-        <div class="swiper-slide"><img src="../../static/img/banner2.png"></div>
-        <div class="swiper-slide"><img src="../../static/img/banner3.png"></div>
+			<div th:each="banner : ${banners}" class="swiper-slide">
+                <img th:src="${banner.imgLink}">
+            </div>
     </div>
     <!-- 如果需要导航按钮 -->
     <div class="swiper-button-prev swiper-button-white"></div>
@@ -104,66 +104,23 @@
 	<h2 class="biaoti">看一看我们最近的作品</h2>
 	<h3 class="biaoti1">麦贝网络以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
 	<div class="work-neirong">
-		<a href="anlixiangqing.html"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../../static/img/cylm.png">
-			</div>
-			<div class="work-border-font">
-				<p>嗨车邮联盟</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
-		<a href="anlixiangqing.html"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../../static/img/mlxy.png">
-			</div>
-			<div class="work-border-font">
-				<p>马来西亚语</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
-		<a href="anlixiangqing.html"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../../static/img/hmw.png">
-			</div>
-			<div class="work-border-font">
-				<p>会猫网</p>
-				<span>微信小程序</span>
-			</div>
-		</div></a>
-		<a href="anlixiangqing.html"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../../static/img/qxj.png">
-			</div>
-			<div class="work-border-font">
-				<p>梁山气象局</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
-		<a href="anlixiangqing.html"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../../static/img/lg.png">
-			</div>
-			<div class="work-border-font">
-				<p>蓝果科技</p>
-				<span>网站建设</span>
-			</div>
-		</div></a>
-		<a href="anlixiangqing.html"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../../static/img/yb.png">
-			</div>
-			<div class="work-border-font">
-				<p>一币</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
+                <div class="work-border" th:each="caseDemo : ${caseDemos}">
+                    <a th:href="@{'/caseDemo/' + ${caseDemo.id}}">
+                    <div class="work-border-img">
+                        <i>查看详情</i>
+                        <img th:src="${caseDemo.imgLink}">
+                    </div>
+                    <div class="work-border-font">
+                        <p th:text="${caseDemo.title}"></p>
+                        <span th:switch="${caseDemo.serviceId}">
+                            <span th:case="0">APP开发</span>
+                            <span th:case="1">网站建设</span>
+                            <span th:case="2">微信小程序</span>
+                        </span>
+                    </div>
+                    </a>
+                </div>
+
 	</div>
 	<a href="2anli.html"><div class="gengduo">
 		<p>查看更多案例</p>
@@ -198,30 +155,14 @@
 <div class="news">
 	<h2 class="biaoti">资讯共享，链接未来</h2>
 	<div class="news1">
-		<a href="#"><div>
-			<img src="../../static/img/qxj.png">
-			<h6>喊了半个世纪的人工智能究竟还缺点啥究竟还缺点啥究竟还缺点啥</h6>
-			<p>拥有一个企业网站是每一个企业都应该做的必修课，企业啊网站的设计、功能、访问速度都会直接影响到客户对企业户对企业</p>
-			<span>2018-01-26</span>
-		</div></a>
-		<a href="#"><div>
-			<img src="../../static/img/cylm.png">
-			<h6>当我们谈论智慧零售时，到底在谈什么？</h6>
-			<p>零售在我们生活中是极其常见的一个东西，而智慧零售是在16年阿里云栖大会上，马云提出“新零售”这个概念后才开始存在，那么，当我们谈论智慧零售时，到底在谈什么？</p>
-			<span>2018-01-26</span>
-		</div></a>
-		<a href="#"><div>
-			<img src="../../static/img/hmw.png">
-			<h6>苹果、微软为何能够二次崛起？</h6>
-			<p>洞穿很多表面现象，才更能看清很多事情的微妙变化。 最近几天，科技领域有两个新闻热点与苹果公司有关： 一是微软公司的股票市值突破10000亿美元</p>
-			<span>2018-01-26</span>
-		</div></a>
-		<a href="xinwenxiangqing.html"><div>
-			<img src="../../static/img/mlxy.png">
-			<h6>带血的庞氏，P2P消亡简史</h6>
-			<p>本文将对整个P2P行业乱象进行梳理与记录，以及为什么P2P模式在中国不能完全成立的逻辑论证。本文是对P2P系统性风险的阐述，也是对那个狂热年代的祭奠。</p>
-			<span>2018-01-26</span>
-		</div></a>
+		<a href="#">
+            <div th:each="newss : ${news}">
+                <img th:src="${newss.imgLink}">
+                <h6 th:text="${newss.title}">喊了半个世纪的人工智能究竟还缺点啥究竟还缺点啥究竟还缺点啥</h6>
+                <p th:text="${newss.describe}">拥有一个企业网站是每一个企业都应该做的必修课，企业啊网站的设计、功能、访问速度都会直接影响到客户对企业户对企业</p>
+                <span th:text="${#dates.format(newss.createTime,'yyyy-MM-dd')}">2018-01-26</span>
+            </div>
+        </a>
 	</div>
 	<a href="4xinwen.html"><div class="gengduo">
 		<p>查看更多资讯</p>
@@ -278,37 +219,11 @@
 <div class="hezuo">
 	<h3 class="biaoti">麦贝合作伙伴</h3>
 	<div class="hezuo1">
-		<div>
-			<img src="../../static/img/hezuo1.png">
-			<p>中国邮政</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo2.png">
-			<p>会猫网-一站式展会服务平台</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo3.png">
-			<p>720Think</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo4.png">
-			<p>城市123</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo5.png">
-			<p>先智科技</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo6.png">
-			<p>元隆盛建设</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo7.png">
-			<p>奥晶生物科技</p>
-		</div>
-		<div>
-			<img src="../../static/img/hezuo8.png">
-			<p>绿青数据</p>
+		<div th:each="partner : ${partners}">
+            <a th:href="@{${partner.link}}" target="_blank">
+                <img th:src="${partner.imgLink}">
+                <p th:text="${partner.imgName}">中国邮政</p>
+            </a>
 		</div>
 	</div>
 </div>
@@ -318,23 +233,24 @@
 	<div class="di-kuang">
 		<div class="di-kuang-left">
 			<div class="di-kuang-left1">
-				<a href="index.html">网站首页</a>
+				<a th:href="@{/index}">网站首页</a>
 				<a href="2anli.html">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
-				<a href="5zhaopin.html">招贤纳士</a>
+				<a th:href="@{/human/list}">招贤纳士</a>
 				<a href="6lianxi.html">联系我们</a>
 			</div>
-			<p>友情链接</p>
-			<div class="di-kuang-left2">
-				<a href="#">糖醋里脊科技</a>
-				<a href="#">芝麻数据</a>
-			</div>
+            <p>友情链接</p>
+            <div class="di-kuang-left2">
+                <div th:each="links : ${friends}" style="float: left">
+                    <a th:text="${links.title}" th:href="${links.href}"></a>
+                </div>
+            </div>
 		</div>
-		<div class="di-kuang-right">
-			<h1>山东麦贝网络技术有限公司</h1>
-			<p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
-			<p>0537-6506777&nbsp;&nbsp;18563715777</p>
-		</div>
+        <div class="di-kuang-right">
+            <h1 th:text="${companys.companyName}"></h1>
+            <p th:text="${companys.address}"></p>
+            <p th:text="${companys.phone}"></p>
+        </div>
 	</div>
 	<div class="di1">
 		<span>Copyright © 2019 山东麦贝 All Rights Reserved</span>

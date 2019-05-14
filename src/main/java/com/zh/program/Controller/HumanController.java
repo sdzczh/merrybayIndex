@@ -62,6 +62,7 @@ public class HumanController {
             human.setJobsRequire(list.getJobsRequire());
             humans.add(human);
         }
+
         model.addAttribute("humans", humans);
         JSONObject jsonObject = companyinformationService.getInfo();
         model.addAttribute("companyInfo", jsonObject);

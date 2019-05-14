@@ -182,9 +182,9 @@
      order by id desc 
   </select>
   <select id="selectPaging" parameterType="java.util.Map" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from case_demo
+    select
+    id, service_id, details, img_link, aa, bb, create_time, update_time, title, cd.describe
+    from case_demo cd
     where 1=1 
     <if test="serviceId != null">
        and  service_id = #{serviceId,jdbcType=INTEGER}
