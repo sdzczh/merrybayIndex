@@ -67,7 +67,10 @@
             <div class="mianbaoxie">
                 <a th:href="@{/index}">首页></a>
                 <a th:href="@{/service}">服务&案例></a>
-                <a href="app.html">APP开发></a>
+                <a th:if="${caseDemo.serviceId} == 0 " th:href="@{/caseDemo} + '/' + ${caseDemo.serviceId}">APP开发></a>
+                <a th:if="${caseDemo.serviceId} == 1 " th:href="@{/caseDemo} + '/' + ${caseDemo.serviceId}">网站建设></a>
+                <a th:if="${caseDemo.serviceId} == 2 " th:href="@{/caseDemo} + '/' + ${caseDemo.serviceId}">微信小程序></a>
+                <a th:if="${caseDemo.serviceId} == 3 " th:href="@{/caseDemo} + '/' + ${caseDemo.serviceId}">解决方案定制></a>
                 <span>详情</span>
             </div>
             <div class="xiang-nei">
