@@ -15,16 +15,17 @@
 			<img src="../../static/img/logo.png">
     		<div>
     			<li><a th:href="@{/index}" style="color: #036eb8;">首页</a></li>
-            <li><a href="2anli.html">服务&案例</a>
+            <li><a th:href="@{/service}">服务&案例</a>
                 <ul>
                     <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
                     <li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
                     <li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
+                    <li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
                 </ul>
             </li>
             <li><a href="4xinwen.html">新闻&动态</a></li> 
             <li><a th:href="@{/human/list}">招贤纳士</a></li>
-            <li><a href="6lianxi.html">联系我们</a></li> 
+            <li><a th:href="@{/index/contact}">联系我们</a></li> 
     		</div>
     </div>
 </ul>        
@@ -43,7 +44,7 @@
 		<a th:href="@{/server}">服务&案例</a>
         <a href="4xinwen.html">新闻&动态</a>
         <a th:href="@{/human/list}">招贤纳士</a>
-        <a href="6lianxi.html">联系我们</a>
+        <a th:href="@{/index/contact}">联系我们</a>
 	</div>
 </div>
 <script>
@@ -116,6 +117,7 @@
                             <span th:case="0">APP开发</span>
                             <span th:case="1">网站建设</span>
                             <span th:case="2">微信小程序</span>
+                            <span th:case="3">解决方案定制</span>
                         </span>
                     </div>
                     </a>
@@ -237,7 +239,7 @@
 				<a th:href="@{/server}">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
 				<a th:href="@{/human/list}">招贤纳士</a>
-				<a href="6lianxi.html">联系我们</a>
+				<a th:href="@{/index/contact}">联系我们</a>
 			</div>
             <p>友情链接</p>
             <div class="di-kuang-left2">

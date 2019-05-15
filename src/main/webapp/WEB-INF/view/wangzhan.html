@@ -19,11 +19,12 @@
                     <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
                     <li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
                     <li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
+                    <li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
                 </ul>
             </li>
             <li><a href="4xinwen.html">新闻&动态</a></li> 
             <li><a th:href="@{/human/list}">招贤纳士</a></li>
-            <li><a href="6lianxi.html">联系我们</a></li> 
+            <li><a th:href="@{/index/contact}">联系我们</a></li> 
     		</div>
     </div>
 </ul>        
@@ -42,7 +43,7 @@
 		<a th:href="@{/service}">服务&案例</a>
         <a href="4xinwen.html">新闻&动态</a>
         <a th:href="@{/hunman/list}">招贤纳士</a>
-        <a href="6lianxi.html">联系我们</a>
+        <a th:href="@{/index/contact}">联系我们</a>
 	</div>
 </div>
 <script>
@@ -60,7 +61,10 @@
 <div class="banner22"></div>
 
 <div class="work" style="background: #fff;">
-	<h2 class="biaoti">网站建设相关案例</h2>
+	<h2 class="biaoti" th:if="${type}==0">APP开发相关案例</h2>
+	<h2 class="biaoti" th:if="${type}==1">网站建设相关案例</h2>
+	<h2 class="biaoti" th:if="${type}==2">微信小程序相关案例</h2>
+	<h2 class="biaoti" th:if="${type}==3">解决方案定制相关案例</h2>
 	<h3 class="biaoti1">小墨匠以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
 	<div class="work-neirong">
 			<div class="work-border" th:each="cases : ${caseDemos}">
@@ -75,6 +79,7 @@
                             <span th:case="0">APP开发</span>
                             <span th:case="1">网站建设</span>
                             <span th:case="2">微信小程序</span>
+                            <span th:case="3">解决方案定制</span>
 					</span>
 				</div>
 				</a>
@@ -121,7 +126,7 @@
 				<a th:href="@{/service}">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
 				<a th:href="@{/hunman/list}">招贤纳士</a>
-				<a href="6lianxi.html">联系我们</a>
+				<a th:href="@{/index/contact}">联系我们</a>
 			</div>
 			<p>友情链接</p>
 			<div class="di-kuang-left2">

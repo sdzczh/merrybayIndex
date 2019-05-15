@@ -56,4 +56,13 @@ public class IndexController {
         model.addAttribute("banners", banners);
         return "index.html";
     }
+
+    @RequestMapping(value = "contact")
+    public String contactUs(Model model){
+        List<FriendshipLink> links = friendshipLinkService.getLinks();
+        JSONObject companys = comService.getInfo();
+        model.addAttribute("friends", links);
+        model.addAttribute("companys", companys);
+        return "6lianxi.html";
+    }
 }

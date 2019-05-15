@@ -19,11 +19,12 @@
 					<li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
 					<li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
 					<li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
+					<li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
                 </ul>
             </li>
             <li><a href="4xinwen.html">新闻&动态</a></li> 
             <li><a th:href="@{/human/list}">招贤纳士</a></li>
-            <li><a href="6lianxi.html">联系我们</a></li> 
+            <li><a th:href="@{/index/contact}">联系我们</a></li> 
     		</div>
     </div>
 </ul>        
@@ -43,7 +44,7 @@
        
         <a href="4xinwen.html">新闻&动态</a>
         <a th:href="@{/human/list}">招贤纳士</a>
-        <a href="6lianxi.html">联系我们</a>
+        <a th:href="@{/index/contact}">联系我们</a>
 	</div>
 </div>
 <script>
@@ -68,6 +69,7 @@
 			<h5 th:if="${services[0].type} == 0 ">APP开发</h5>
 			<h5 th:if="${services[0].type} == 1 ">网站建设</h5>
 			<h5 th:if="${services[0].type} == 2 ">微信小程序</h5>
+			<h5 th:if="${services[0].type} == 3 ">解决方案定制</h5>
 			<i></i>
 			<h6 th:text="${services[0].bb}"></h6>
 			<p th:text="${services[0].describe}"></p>
@@ -84,6 +86,7 @@
 			<h5 th:if="${services[1].type} == 0 ">APP开发</h5>
 			<h5 th:if="${services[1].type} == 1 ">网站建设</h5>
 			<h5 th:if="${services[1].type} == 2 ">微信小程序</h5>
+			<h5 th:if="${services[1].type} == 3 ">解决方案定制</h5>
 			<i></i>
 			<h6 th:text="${services[1].bb}"></h6>
 			<p th:text="${services[1].describe}"></p>
@@ -100,6 +103,7 @@
 			<h5 th:if="${services[2].type} == 0 ">APP开发</h5>
 			<h5 th:if="${services[2].type} == 1 ">网站建设</h5>
 			<h5 th:if="${services[2].type} == 2 ">微信小程序</h5>
+			<h5 th:if="${services[2].type} == 3 ">解决方案定制</h5>
 			<i></i>
 			<h6 th:text="${services[2].bb}"></h6>
 			<span>查看案例</span>
@@ -114,6 +118,7 @@
 			<h5 th:if="${services[3].type} == 0 ">APP开发</h5>
 			<h5 th:if="${services[3].type} == 1 ">网站建设</h5>
 			<h5 th:if="${services[3].type} == 2 ">微信小程序</h5>
+			<h5 th:if="${services[3].type} == 3 ">解决方案定制</h5>
 			<i></i>
 			<h6 th:text="${services[3].bb}"></h6>
 			<span>查看案例</span>
@@ -132,7 +137,7 @@
 				<a th:href="@{/service}">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
 				<a th:href="@{/human/list}">招贤纳士</a>
-				<a href="6lianxi.html">联系我们</a>
+				<a th:href="@{/index/contact}">联系我们</a>
 			</div>
 			<p>友情链接</p>
 			<div class="di-kuang-left2">
