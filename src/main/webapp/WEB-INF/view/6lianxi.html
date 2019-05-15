@@ -168,7 +168,7 @@
         var name = $("#name").val();
         var phone = $("#phone").val();
         var email = $("#email").val();
-        if (name == null || phone == null) {
+        if (name == null || name === "" || phone === "" || phone == null) {
             alert("请把姓名和手机号填写完整");
             return;
         }
