@@ -1,5 +1,6 @@
 package com.zh.program.Service;
 
+import com.zh.program.Entrty.CaseDemo;
 import com.zh.program.Entrty.News;
 import java.util.List;
 import java.util.Map;
@@ -81,4 +82,11 @@ public interface NewsService {
      * @date: 2019-05-08 14:28:08
      **/ 
     int selectCount(Map<Object, Object> param);
+
+    /**
+     * 倒序显示前三条
+     * @param map
+     * @return
+     */
+    List<News> selectRecommendCase(Map<Object, Object> map);
 }

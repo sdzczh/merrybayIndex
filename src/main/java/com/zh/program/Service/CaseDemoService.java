@@ -84,5 +84,10 @@ public interface CaseDemoService {
 
     List<CaseDemo> selectType(Map<Object, Object> map);
 
+    /**
+     * 倒序显示前三条
+     * @param map
+     * @return
+     */
     List<CaseDemo> selectRecommendCase(Map<Object, Object> map);
 }

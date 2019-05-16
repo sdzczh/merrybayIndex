@@ -247,4 +247,7 @@
        and  update_time = #{updateTime,jdbcType=TIMESTAMP}
     </if>
   </select>
+  <select id="selectRecommendCase" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select id, title, img_link, update_time from news order by update_time desc limit 0,3;
+  </select>
 </mapper>

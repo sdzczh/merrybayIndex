@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -13,18 +13,19 @@
 		<div class="nav-neirong">
 			<img src="../../static/img/logo.png">
     		<div>
-    			<li><a href="index.html">首页</a></li> 
-            <li><a href="2anli.html">服务&案例</a>
+    			<li><a th:href="@{/index}">首页</a></li>
+            <li><a th:href="@{/service}">服务&案例</a>
                 <ul>
-                    <li><a href="app.html">APP开发</a></li>
-                    <li><a href="wangzhan.html">网站建设</a></li>
-                    <li><a href="weixin.html">微信小程序</a></li>
+                    <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
+                    <li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
+                    <li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
+                    <li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
                 </ul>
             </li>
-            <li><a href="4xinwen.html" style="color: #036eb8;">新闻&动态</a></li> 
-            <li><a href="5zhaopin.html">招贤纳士</a></li>
-            <li><a href="6lianxi.html">联系我们</a></li> 
-    		</div>
+            <li><a th:href="@{/news/list}" style="color: #036eb8;">新闻&动态</a></li>
+            <li><a th:href="@{/human/list}">招贤纳士</a></li>
+            <li><a th:href="@{/index/contact}">联系我们</a></li>
+            </div>
     </div>
 </ul>        
 
@@ -38,11 +39,11 @@
 </div>
 <div id="nav3">
 	<div>
-		<a href="index.html">首页</a>
-		<a href="2anli.html">服务&案例</a>
-        <a href="4xinwen.html" style="color: #036eb8;">新闻&动态</a>
-        <a href="5zhaopin.html">招贤纳士</a>
-        <a href="6lianxi.html">联系我们</a>
+		<a th:href="@{/index}">首页</a>
+		<a th:href="@{/server}">服务&案例</a>
+        <a th:href="@{/news/list}" style="color: #036eb8;">新闻&动态</a>
+        <a th:href="@{/human/list}">招贤纳士</a>
+        <a th:href="@{/index/contact}">联系我们</a>
 	</div>
 </div>
 <script>
@@ -60,98 +61,33 @@
 <div class="banner4"></div>
 
 <div class="xteam-tou">
-	<p class="team2">行业新闻</p>
-	<p class="team1">公司动态</p>
+	<a th:href="@{/news/list/0}"><p th:class="${type} == 0 ? 'team2' : 'team1'">行业新闻</p></a>
+    <a th:href="@{/news/list/1}"><p th:class="${type} == 0 ? 'team1' : 'team2'">公司动态</p></a>
 </div>
-<a href="xinwenxiangqing.html">
-<div class="xinwen">
+
+<div  class="xinwen" th:each="resultLists : ${resultList}">
+	<a th:href="@{'/news/details/' + ${resultLists.id}}">
 	<div class="xinwen-img">
-		<img src="../../static/img/anli2.png">
+		<img th:src="${resultLists.imgLink}">
 	</div>
 	<div class="xinwen-font">
-		<h6>重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
-		<i>[行业新闻]</i>
-		<p>北京时间2018年10月31日上午，由中共深圳宝安区委员会、深圳市宝安区人民政府、深圳市宝安区人才工作领导小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人才服务周启动仪式”。</p>
+		<h6 th:text="${resultLists.title}"></h6>
+		<i th:if="${resultLists.type} == 0">[行业新闻]</span></i>
+		<i th:if="${resultLists.type} == 1">[公司动态]</span></i>
+		<p th:text="${resultLists.describe}"></p>
 	</div>
 	<div class="xinwen-time">
-		<p>11-09</p>
-		<span>2018</span>
-		<i>查看详情</i>
+		<p th:text="${#dates.format(resultLists.updateTime, 'MM-dd')}"></p>
+		<span th:text="${#dates.format(resultLists.updateTime, 'yyyy')}"></span>
+		<i th:text="${resultLists.details}">查看详情</i>
 	</div>
+	</a>
 </div>
-</a>
-<a href="xinwenxiangqing.html">
-<div class="xinwen">
-	<div class="xinwen-img">
-		<img src="../../static/img/anli1.png">
-	</div>
-	<div class="xinwen-font">
-		<h6>重磅!! 制造企业可以”零成本”实现上云上平台了重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
-		<i>[行业新闻]</i>
-		<p>北京时间2018年10月31日上午，由中共深圳宝安区委员会、深圳市宝安区人民政府、深圳市宝安区人才工作领导小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人才服务周启动仪式”。</p>
-	</div>
-	<div class="xinwen-time">
-		<p>11-09</p>
-		<span>2018</span>
-		<i>查看详情</i>
-	</div>
-</div>
-</a>
-<a href="xinwenxiangqing.html">
-<div class="xinwen">
-	<div class="xinwen-img">
-		<img src="../../static/img/anli3.png">
-	</div>
-	<div class="xinwen-font">
-		<h6>重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
-		<i>[行业新闻]</i>
-		<p>北京时间2018年10月31日上午，由中共深圳宝安区委员会、深圳市宝安区人民政府、深圳市宝安区人才工作领导小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人才服务周启动仪式”。</p>
-	</div>
-	<div class="xinwen-time">
-		<p>11-09</p>
-		<span>2018</span>
-		<i>查看详情</i>
-	</div>
-</div>
-</a>
-<a href="xinwenxiangqing.html">
-<div class="xinwen">
-	<div class="xinwen-img">
-		<img src="../../static/img/anli1.png">
-	</div>
-	<div class="xinwen-font">
-		<h6>重磅!! 制造企业可以”零成本”实现上云上平台了重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
-		<i>[行业新闻]</i>
-		<p>北京时间2018年10月31日上午，由中共深圳宝安区委员会、深圳市宝安区人民政府、深圳市宝安区人才工作领导小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人才服务周启动仪式”。</p>
-	</div>
-	<div class="xinwen-time">
-		<p>11-09</p>
-		<span>2018</span>
-		<i>查看详情</i>
-	</div>
-</div>
-</a>
-<a href="xinwenxiangqing.html">
-<div class="xinwen">
-	<div class="xinwen-img">
-		<img src="../../static/img/anli4.png">
-	</div>
-	<div class="xinwen-font">
-		<h6>重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
-		<i>[行业新闻]</i>
-		<p>北京时间2018年10月31日上午，由中共深圳宝安区委员会、深圳市宝安区人民政府、深圳市宝安区人才工作领导小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人小组于深圳宝安图书馆共同举办“2018宝安人才服务周启动仪式”。</p>
-	</div>
-	<div class="xinwen-time">
-		<p>11-09</p>
-		<span>2018</span>
-		<i>查看详情</i>
-	</div>
-</div>
-</a>
-	<a href="#"><div class="gengduo">
-		<p>加载更多</p>
+
+        <div class="gengduo">
+		<p id="loading_more">加载更多</p>
 		<img src="../../static/img/jiantou1.png" />
-	</div></a>
+	    </div>
 	<div style="height: 60px;"></div>
 
 <!--di-->
@@ -159,22 +95,23 @@
 	<div class="di-kuang">
 		<div class="di-kuang-left">
 			<div class="di-kuang-left1">
-				<a href="index.html">网站首页</a>
-				<a href="2anli.html">客户案例</a>
-				<a href="3fangan.html">方案定制</a>
-				<a href="5zhaopin.html">招贤纳士</a>
-				<a href="6lianxi.html">联系我们</a>
+                <a th:href="@{/index}">网站首页</a>
+                <a th:href="@{/service}">客户案例</a>
+                <a href="3fangan.html">方案定制</a>
+                <a th:href="@{/human/list}">招贤纳士</a>
+                <a th:href="@{/index/contact}">联系我们</a>
 			</div>
 			<p>友情链接</p>
-			<div class="di-kuang-left2">
-				<a href="#">糖醋里脊科技</a>
-				<a href="#">芝麻数据</a>
-			</div>
+            <div class="di-kuang-left2">
+                <div th:each="links : ${friends}" style="float: left">
+                    <a th:text="${links.title}" th:href="${links.href}"></a>
+                </div>
+            </div>
 		</div>
 		<div class="di-kuang-right">
-			<h1>山东麦贝网络技术有限公司</h1>
-			<p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
-			<p>0537-6506777&nbsp;&nbsp;18563715777</p>
+            <h1 th:text="${companyInfo.companyName}"></h1>
+            <p th:text="${companyInfo.address}"></p>
+            <p th:text="${companyInfo.phone}"></p>
 		</div>
 	</div>
 	<div class="di1">
@@ -184,3 +121,14 @@
 
 	</body>
 </html>
+<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#loading_more").click(function(){
+            alert()
+            var val = "<div class='xinwen' style='height: 200px;width: 1200px'></div>";
+            $(".xinwen:last").append(val);
+			alert("1");
+        });
+    });
+</script>

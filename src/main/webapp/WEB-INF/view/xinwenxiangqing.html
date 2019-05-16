@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -13,17 +13,17 @@
 		<div class="nav-neirong">
 			<img src="../../static/img/logo.png">
     		<div>
-    			<li><a href="index.html">首页</a></li> 
-            <li><a href="2anli.html">服务&案例</a>
+    			<li><a th:href="@{/index}">首页</a></li>
+            <li><a th:href="@{/server}">服务&案例</a>
                 <ul>
-                    <li><a href="app.html">APP开发</a></li>
-                    <li><a href="wangzhan.html">网站建设</a></li>
-                    <li><a href="weixin.html">微信小程序</a></li>
+					<li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
+					<li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
+					<li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
                 </ul>
             </li>
-            <li><a href="4xinwen.html">新闻&动态</a></li> 
-            <li><a href="5zhaopin.html">招贤纳士</a></li>
-            <li><a href="6lianxi.html">联系我们</a></li> 
+            <li><a th:href="@{/news/list}">新闻&动态</a></li>
+				<li><a th:href="@{/human/list}">招贤纳士</a></li>
+				<li><a th:href="@{/index/contact}">联系我们</a></li>
     		</div>
     </div>
 </ul>        
@@ -38,11 +38,11 @@
 </div>
 <div id="nav3">
 	<div>
-		<a href="index.html">首页</a>
-		<a href="2anli.html">服务&案例</a>
-        <a href="4xinwen.html">新闻&动态</a>
-        <a href="5zhaopin.html">招贤纳士</a>
-        <a href="6lianxi.html">联系我们</a>
+		<a th:href="@{/index}">首页</a>
+		<a th:href="@{/service}">服务&案例</a>
+        <a th:href="@{/news/list}">新闻&动态</a>
+		<a th:href="@{/human/list}">招贤纳士</a>
+		<a th:href="@{/index/contact}">联系我们</a>
 	</div>
 </div>
 <script>
@@ -63,45 +63,31 @@
 	<div class="xiang">
 		<div class="xiang-left">
 			<div class="mianbaoxie">
-				<a href="index.html">首页></a>
-				<a href="4xinwen.html">行业新闻></a>
+				<a th:href="@{/index}">首页></a>
+				<a th:href="@{/news/list}">行业新闻></a>
 				<span>详情</span>
 			</div>
 			<div class="xiang-nei">
 				<div class="xiang-biaoti">
-					<h6>重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
-					<p>2018-01-01</p>
+					<h6 th:text="${news.title}">重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
+					<p th:text="${#dates.format(news.updateTime, 'yyyy-MM-dd')}">2018-01-01</p>
 				</div>
 				<div class="xiang-neirong">
-					<p>内容内容内容内容内容内容</p>
-					<img src="../../static/img/anli4.png">
+					<p th:text="${news.details}">内容内容内容内容内容内容</p>
+					<!--<img src="../../static/img/anli4.png">
 					<p>内容内容内容内容容</p>
-					<img src="../../static/img/anli4.png">
+					<img src="../../static/img/anli4.png">-->
 				</div>
 			</div>
 		</div>
 		<div class="xiang-right">
 			<h6>推荐新闻</h6>
-			<div class="nei1">
-				<a href="#">
+			<div class="nei1" th:each="newsLists : ${newsList}">
+				<a th:href="@{'/news/details/' + ${newsLists.id}}">
 				<div>
-					<img src="../../static/img/mlxy.png">
-					<p>标题标题</p>
-					<span>2018-01-01</span>
-				</div>
-				</a>
-				<a href="#">
-				<div>
-					<img src="../../static/img/cylm.png">
-					<p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-					<span>2018-01-01</span>
-				</div>
-				</a>
-				<a href="#">
-				<div>
-					<img src="../../static/img/mlxy.png">
-					<p>标题标题</p>
-					<span>2019-01-01</span>
+					<img th:src="${newsLists.imgLink}">
+					<p th:text="${newsLists.title}">标题标题</p>
+					<span th:text="${#dates.format(news.updateTime, 'yyyy-MM-dd')}">2018-01-01</span>
 				</div>
 				</a>
 			</div>
@@ -115,22 +101,23 @@
 	<div class="di-kuang">
 		<div class="di-kuang-left">
 			<div class="di-kuang-left1">
-				<a href="index.html">网站首页</a>
-				<a href="2anli.html">客户案例</a>
+				<a th:href="@{/index}">网站首页</a>
+				<a th:href="@{/service}">客户案例</a>
 				<a href="3fangan.html">方案定制</a>
-				<a href="5zhaopin.html">招贤纳士</a>
-				<a href="6lianxi.html">联系我们</a>
+				<a th:href="@{/human/list}">招贤纳士</a>
+				<a th:href="@{/index/contact}">联系我们</a>
 			</div>
 			<p>友情链接</p>
 			<div class="di-kuang-left2">
-				<a href="#">糖醋里脊科技</a>
-				<a href="#">芝麻数据</a>
+				<div th:each="links : ${friends}" style="float: left">
+					<a th:text="${links.title}" th:href="${links.href}"></a>
+				</div>
 			</div>
 		</div>
 		<div class="di-kuang-right">
-			<h1>山东麦贝网络技术有限公司</h1>
-			<p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
-			<p>0537-6506777&nbsp;&nbsp;18563715777</p>
+			<h1 th:text="${companyInfo.companyName}"></h1>
+			<p th:text="${companyInfo.address}"></p>
+			<p th:text="${companyInfo.phone}"></p>
 		</div>
 	</div>
 	<div class="di1">

@@ -23,7 +23,7 @@
                     <li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
                 </ul>
             </li>
-            <li><a href="4xinwen.html">新闻&动态</a></li> 
+            <li><a th:href="@{/news/list}">新闻&动态</a></li>
             <li><a th:href="@{/human/list}">招贤纳士</a></li>
             <li><a th:href="@{/index/contact}">联系我们</a></li> 
     		</div>
@@ -42,7 +42,7 @@
 	<div>
 		<a th:href="@{/index}" style="color: #036eb8;">首页</a>
 		<a th:href="@{/server}">服务&案例</a>
-        <a href="4xinwen.html">新闻&动态</a>
+        <a th:href="@{/news/list}">新闻&动态</a>
         <a th:href="@{/human/list}">招贤纳士</a>
         <a th:href="@{/index/contact}">联系我们</a>
 	</div>
@@ -166,7 +166,7 @@
             </div>
         </a>
 	</div>
-	<a href="4xinwen.html"><div class="gengduo">
+	<a th:href="@{news/list}"><div class="gengduo">
 		<p>查看更多资讯</p>
 		<img src="../../static/img/jiantou.png" />
 	</div></a>	

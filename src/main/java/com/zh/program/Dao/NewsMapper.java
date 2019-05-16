@@ -22,4 +22,6 @@ public interface NewsMapper {
     List<News> selectPaging(Map<Object, Object> param);
 
     int selectCount(Map<Object, Object> param);
+
+    List<News> selectRecommendCase(Map<Object, Object> map);
 }

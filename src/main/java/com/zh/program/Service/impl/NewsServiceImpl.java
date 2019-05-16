@@ -66,4 +66,9 @@ public class NewsServiceImpl implements NewsService {
     public int selectCount(Map<Object, Object> param) {
         return this.newsMapper.selectCount(param);
     }
+
+    @Override
+    public List<News> selectRecommendCase(Map<Object, Object> map) {
+        return this.newsMapper.selectRecommendCase(map);
+    }
 }
