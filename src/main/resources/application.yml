@@ -13,7 +13,6 @@ spring:
     #hibernate:
       #ddl-auto: update
   thymeleaf:
-    prefix: /WEB-INF/view/
     mode: HTML5
     encoding: UTF-8
     servlet:
@@ -24,4 +23,4 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
 server:
-  port: 8888
+  port: 8078
