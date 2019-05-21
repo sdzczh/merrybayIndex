@@ -157,14 +157,14 @@
 <div class="news">
 	<h2 class="biaoti">资讯共享，链接未来</h2>
 	<div class="news1">
-		<a href="#">
-            <div th:each="newss : ${news}">
-                <img th:src="${newss.imgLink}">
-                <h6 th:text="${newss.title}">喊了半个世纪的人工智能究竟还缺点啥究竟还缺点啥究竟还缺点啥</h6>
-                <p th:text="${newss.describe}">拥有一个企业网站是每一个企业都应该做的必修课，企业啊网站的设计、功能、访问速度都会直接影响到客户对企业户对企业</p>
-                <span th:text="${#dates.format(newss.createTime,'yyyy-MM-dd')}">2018-01-26</span>
-            </div>
-        </a>
+		<div th:each="newss : ${news}">
+			<a th:href="@{'/news/details/' + ${newss.id}}">
+				<img th:src="${newss.imgLink}">
+				<h6 th:text="${newss.title}">喊了半个世纪的人工智能究竟还缺点啥究竟还缺点啥究竟还缺点啥</h6>
+				<p th:text="${newss.describe}">拥有一个企业网站是每一个企业都应该做的必修课，企业啊网站的设计、功能、访问速度都会直接影响到客户对企业户对企业</p>
+				<span th:text="${#dates.format(newss.createTime,'yyyy-MM-dd')}">2018-01-26</span>
+			</a>
+		</div>
 	</div>
 	<a th:href="@{news/list}"><div class="gengduo">
 		<p>查看更多资讯</p>

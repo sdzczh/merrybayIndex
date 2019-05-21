@@ -4,17 +4,17 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		<title>山东麦贝网络技术有限公司-新闻详情</title>
-		<link rel="stylesheet" href="../static/css/xiaomojiang.css" />
+		<link rel="stylesheet" href="../../static/css/xiaomojiang.css" />
 
 	</head>
 	<body>
 
 <ul id="nav"> 
 		<div class="nav-neirong">
-			<img src="../static/img/logo.png">
+			<img src="../..//static/img/logo.png">
     		<div>
     			<li><a th:href="@{/index}">首页</a></li>
-            <li><a th:href="@{/server}">服务&案例</a>
+            <li><a th:href="@{/service}">服务&案例</a>
                 <ul>
 					<li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
 					<li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
@@ -29,7 +29,7 @@
 </ul>        
 
 <div class="nav-yidong">
-	<img src="../static/img/logo.png">
+	<img src="../../static/img/logo.png">
 	<div id="nav2">
 		<p></p>
 		<p></p>
@@ -72,8 +72,8 @@
 					<h6 th:text="${news.title}">重磅!! 制造企业可以”零成本”实现上云上平台了！</h6>
 					<p th:text="${#dates.format(news.updateTime, 'yyyy-MM-dd')}">2018-01-01</p>
 				</div>
-				<div class="xiang-neirong">
-					<p th:text="${news.details}">内容内容内容内容内容内容</p>
+				<div class="xiang-neirong" id="notetext">
+					<p th:utext="${news.details}">内容内容内容内容内容内容</p>
 					<!--<img src="../../static/img/anli4.png">
 					<p>内容内容内容内容容</p>
 					<img src="../../static/img/anli4.png">-->
@@ -126,4 +126,9 @@
 </div>
 
 	</body>
+
+	<script type="text/javascript">
+        var obj = document.getElementById("notetext");
+        obj.innerHTML = obj.innerText;//这样重新设置html代码为解析后的格式
+	</script>
 </html>
