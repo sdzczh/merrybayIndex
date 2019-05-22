@@ -75,19 +75,14 @@
 				</div>
 				<div class="work-border-font">
 					<p th:text="${cases.title}"></p>
-					<span th:switch="${cases.serviceId}">
-                            <span th:case="0">APP开发</span>
-                            <span th:case="1">网站建设</span>
-                            <span th:case="2">微信小程序</span>
-                            <span th:case="3">解决方案定制</span>
-					</span>
+					<span th:text="${cases.describe}"></span>
 				</div>
 				</a>
 			</div>
 	</div>
 	<a th:href="@{/service}"><div class="gengduo">
 		<p>加载更多案例</p>
-		<img src="../static/img/jiantou1.png" />
+		<img th:src="@{/img/jiantou1.png}" />
 	</div></a>
 	
 </div>

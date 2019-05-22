@@ -106,25 +106,25 @@
 	<h3 class="biaoti1">麦贝网络以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
 	<div class="work-neirong">
                 <div class="work-border" th:each="caseDemo : ${caseDemos}">
-                    <a th:href="@{'/caseDemo/' + ${caseDemo.id}}">
+                    <a th:href="@{'/caseDemo/detail/' + ${caseDemo.id}}">
                     <div class="work-border-img">
                         <i>查看详情</i>
                         <img th:src="${caseDemo.imgLink}">
                     </div>
                     <div class="work-border-font">
                         <p th:text="${caseDemo.title}"></p>
-                        <span th:switch="${caseDemo.serviceId}">
+                        <div th:switch="${caseDemo.serviceId}">
                             <span th:case="0">APP开发</span>
                             <span th:case="1">网站建设</span>
                             <span th:case="2">微信小程序</span>
                             <span th:case="3">解决方案定制</span>
-                        </span>
+                        </div>
                     </div>
                     </a>
                 </div>
 
 	</div>
-	<a th:href="@{/server}"><div class="gengduo">
+	<a th:href="@{/service}"><div class="gengduo">
 		<p>查看更多案例</p>
 		<img src="../static/img/jiantou.png" />
 	</div></a>

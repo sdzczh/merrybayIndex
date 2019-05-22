@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>山东麦贝网络技术有限公司-新闻&动态</title>
-		<link rel="stylesheet" href="../static/css/xiaomojiang.css" />
+		<link rel="stylesheet" th:href="@{/css/xiaomojiang.css}" />
 
 	</head>
 	<body>
@@ -30,7 +30,7 @@
 </ul>        
 
 <div class="nav-yidong">
-	<img src="../static/img/logo.png">
+	<img th:src="@{/img/logo.png}">
 	<div id="nav2">
 		<p></p>
 		<p></p>
@@ -79,14 +79,14 @@
 	<div class="xinwen-time">
 		<p th:text="${#dates.format(resultLists.updateTime, 'MM-dd')}"></p>
 		<span th:text="${#dates.format(resultLists.updateTime, 'yyyy')}"></span>
-		<i th:text="${resultLists.details}">查看详情</i>
+		<i>查看详情</i>
 	</div>
 	</a>
 </div>
 
         <div class="gengduo">
 		<p id="loading_more">加载更多</p>
-		<img src="../static/img/jiantou1.png" />
+		<img th:src="@{/img/jiantou1.png}" />
 	    </div>
 	<div style="height: 60px;"></div>
 
@@ -97,7 +97,6 @@
 			<div class="di-kuang-left1">
                 <a th:href="@{/index}">网站首页</a>
                 <a th:href="@{/service}">客户案例</a>
-                <a href="3fangan.html">方案定制</a>
                 <a th:href="@{/human/list}">招贤纳士</a>
                 <a th:href="@{/index/contact}">联系我们</a>
 			</div>
@@ -125,10 +124,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#loading_more").click(function(){
-            alert()
             var val = "<div class='xinwen' style='height: 200px;width: 1200px'></div>";
             $(".xinwen:last").append(val);
-			alert("1");
         });
     });
 </script>
