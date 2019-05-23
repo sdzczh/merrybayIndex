@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>山东麦贝网络技术有限公司-新闻&动态</title>
-		<link rel="stylesheet" th:href="@{/css/xiaomojiang.css}" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>山东麦贝网络技术有限公司-新闻&动态</title>
+    <link rel="stylesheet" th:href="@{/css/xiaomojiang.css}"/>
 
-	</head>
-	<body>
+</head>
+<body>
 
-<ul id="nav"> 
-		<div class="nav-neirong">
-			<img src="../static/img/logo.png">
-    		<div>
-    			<li><a th:href="@{/index}">首页</a></li>
+<ul id="nav">
+    <div class="nav-neirong">
+        <img src="../static/img/logo.png">
+        <div>
+            <li><a th:href="@{/index}">首页</a></li>
             <li><a th:href="@{/service}">服务&案例</a>
                 <ul>
                     <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
@@ -25,35 +26,35 @@
             <li><a th:href="@{/news/list}" style="color: #036eb8;">新闻&动态</a></li>
             <li><a th:href="@{/human/list}">招贤纳士</a></li>
             <li><a th:href="@{/index/contact}">联系我们</a></li>
-            </div>
+        </div>
     </div>
-</ul>        
+</ul>
 
 <div class="nav-yidong">
-	<img th:src="@{/img/logo.png}">
-	<div id="nav2">
-		<p></p>
-		<p></p>
-		<p></p>
-	</div>
+    <img th:src="@{/img/logo.png}">
+    <div id="nav2">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
 </div>
 <div id="nav3">
-	<div>
-		<a th:href="@{/index}">首页</a>
-		<a th:href="@{/server}">服务&案例</a>
+    <div>
+        <a th:href="@{/index}">首页</a>
+        <a th:href="@{/server}">服务&案例</a>
         <a th:href="@{/news/list}" style="color: #036eb8;">新闻&动态</a>
         <a th:href="@{/human/list}">招贤纳士</a>
         <a th:href="@{/index/contact}">联系我们</a>
-	</div>
+    </div>
 </div>
 <script>
-	nav2.onclick=function(){
-		if(nav3.style.display=="block"){
-			nav3.style.display="none";
-		}else{
-			nav3.style.display="block";	
-		}
-	}
+    nav2.onclick = function () {
+        if (nav3.style.display == "block") {
+            nav3.style.display = "none";
+        } else {
+            nav3.style.display = "block";
+        }
+    }
 </script>
 
 <div class="zxc"></div>
@@ -61,69 +62,69 @@
 <div class="banner4"></div>
 
 <div class="xteam-tou">
-	<a th:href="@{/news/list/0}"><p th:class="${type} == 0 ? 'team2' : 'team1'">行业新闻</p></a>
+    <a th:href="@{/news/list/0}"><p th:class="${type} == 0 ? 'team2' : 'team1'">行业新闻</p></a>
     <a th:href="@{/news/list/1}"><p th:class="${type} == 0 ? 'team1' : 'team2'">公司动态</p></a>
 </div>
 
-<div  class="xinwen" th:each="resultLists : ${resultList}">
-	<a th:href="@{'/news/details/' + ${resultLists.id}}">
-	<div class="xinwen-img">
-		<img th:src="${resultLists.imgLink}">
-	</div>
-	<div class="xinwen-font">
-		<h6 th:text="${resultLists.title}"></h6>
-		<i th:if="${resultLists.type} == 0">[行业新闻]</span></i>
-		<i th:if="${resultLists.type} == 1">[公司动态]</span></i>
-		<p th:text="${resultLists.describe}"></p>
-	</div>
-	<div class="xinwen-time">
-		<p th:text="${#dates.format(resultLists.updateTime, 'MM-dd')}"></p>
-		<span th:text="${#dates.format(resultLists.updateTime, 'yyyy')}"></span>
-		<i>查看详情</i>
-	</div>
-	</a>
+<div class="xinwen" th:each="resultLists : ${resultList}">
+    <a th:href="@{'/news/details/' + ${resultLists.id}}">
+        <div class="xinwen-img">
+            <img th:src="${resultLists.imgLink}">
+        </div>
+        <div class="xinwen-font">
+            <h6 th:text="${resultLists.title}"></h6>
+            <i th:if="${resultLists.type} == 0">[行业新闻]</span></i>
+            <i th:if="${resultLists.type} == 1">[公司动态]</span></i>
+            <p th:text="${resultLists.describe}"></p>
+        </div>
+        <div class="xinwen-time">
+            <p th:text="${#dates.format(resultLists.updateTime, 'MM-dd')}"></p>
+            <span th:text="${#dates.format(resultLists.updateTime, 'yyyy')}"></span>
+            <i>查看详情</i>
+        </div>
+    </a>
 </div>
 
-        <div class="gengduo">
-		<p id="loading_more">加载更多</p>
-		<img th:src="@{/img/jiantou1.png}" />
-	    </div>
-	<div style="height: 60px;"></div>
+<!--<div class="gengduo">
+    <p id="loading_more">加载更多</p>
+    <img th:src="@{/img/jiantou1.png}"/>
+</div>
+<div style="height: 60px;"></div>-->
 
 <!--di-->
 <div class="di">
-	<div class="di-kuang">
-		<div class="di-kuang-left">
-			<div class="di-kuang-left1">
+    <div class="di-kuang">
+        <div class="di-kuang-left">
+            <div class="di-kuang-left1">
                 <a th:href="@{/index}">网站首页</a>
                 <a th:href="@{/service}">客户案例</a>
                 <a th:href="@{/human/list}">招贤纳士</a>
                 <a th:href="@{/index/contact}">联系我们</a>
-			</div>
-			<p>友情链接</p>
+            </div>
+            <p>友情链接</p>
             <div class="di-kuang-left2">
                 <div th:each="links : ${friends}" style="float: left">
                     <a th:text="${links.title}" th:href="${links.href}"></a>
                 </div>
             </div>
-		</div>
-		<div class="di-kuang-right">
+        </div>
+        <div class="di-kuang-right">
             <h1 th:text="${companyInfo.companyName}"></h1>
             <p th:text="${companyInfo.address}"></p>
             <p th:text="${companyInfo.phone}"></p>
-		</div>
-	</div>
-	<div class="di1">
-		<span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
-	</div>
+        </div>
+    </div>
+    <div class="di1">
+        <span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
+    </div>
 </div>
 
-	</body>
+</body>
 </html>
 <script type="text/javascript" src="../static/js/jquery.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $("#loading_more").click(function(){
+    $(document).ready(function () {
+        $("#loading_more").click(function () {
             var val = "<div class='xinwen' style='height: 200px;width: 1200px'></div>";
             $(".xinwen:last").append(val);
         });

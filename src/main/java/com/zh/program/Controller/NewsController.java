@@ -46,14 +46,18 @@ public class NewsController {
     @RequestMapping(value = {"/list/{type}","/list"})
     public String getAll(@PathVariable(value = "type", required=false)Integer type, Integer page, Integer rows, Model model){
         if (type == null){ type = 0;}
-        page = page == null ? 0 : page - 1;
+        Map<Object, Object> map = new HashMap<>();
+        map.put("type", type);
+        /*page = page == null ? 0 : page - 1;
         rows = rows == null ? 10 : rows;
         Map<Object, Object> map = new HashMap<>();
         map.put("type", type);
         model.addAttribute("type", type);
         map.put("firstResult",page * rows);
         map.put("maxResult",rows);
-        List<News> list = newsService.selectPaging(map);
+        List<News> list = newsService.selectPaging(map);*/
+        model.addAttribute("type", type);
+        List<News> list = newsService.selectAll(map);
         Integer count = newsService.selectCount(map);
         List<News> resultList= new LinkedList<>();
         for (News news : list) {

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-		<title>山东麦贝网络技术有限公司-微信小程序案例</title>
-		<link rel="stylesheet" href="../static/css/xiaomojiang.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    <title>山东麦贝网络技术有限公司-微信小程序案例</title>
+    <link rel="stylesheet" href="../static/css/xiaomojiang.css"/>
 
-	</head>
-	<body>
+</head>
+<body>
 
-<ul id="nav"> 
-		<div class="nav-neirong">
-			<img src="../static/img/logo.png">
-    		<div>
-    			<li><a href="index.html">首页</a></li> 
+<ul id="nav">
+    <div class="nav-neirong">
+        <img src="../static/img/logo.png">
+        <div>
+            <li><a href="index.html">首页</a></li>
             <li><a href="2anli.html">服务&案例</a>
                 <ul>
                     <li><a href="app.html">APP开发</a></li>
@@ -21,38 +22,38 @@
                     <li><a href="weixin.html">微信小程序</a></li>
                 </ul>
             </li>
-            <li><a th:href="@{/news/list}">新闻&动态</a></li> 
+            <li><a th:href="@{/news/list}">新闻&动态</a></li>
             <li><a href="5zhaopin.html">招贤纳士</a></li>
-            <li><a href="6lianxi.html">联系我们</a></li> 
-    		</div>
+            <li><a href="6lianxi.html">联系我们</a></li>
+        </div>
     </div>
-</ul>        
+</ul>
 
 <div class="nav-yidong">
-	<img src="../static/img/logo.png">
-	<div id="nav2">
-		<p></p>
-		<p></p>
-		<p></p>
-	</div>
+    <img src="../static/img/logo.png">
+    <div id="nav2">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
 </div>
 <div id="nav3">
-	<div>
-		<a href="index.html">首页</a>
-		<a href="2anli.html">服务&案例</a>
+    <div>
+        <a href="index.html">首页</a>
+        <a href="2anli.html">服务&案例</a>
         <a th:href="@{/news/list}">新闻&动态</a>
         <a href="5zhaopin.html">招贤纳士</a>
         <a href="6lianxi.html">联系我们</a>
-	</div>
+    </div>
 </div>
 <script>
-	nav2.onclick=function(){
-		if(nav3.style.display=="block"){
-			nav3.style.display="none";
-		}else{
-			nav3.style.display="block";	
-		}
-	}
+    nav2.onclick = function () {
+        if (nav3.style.display == "block") {
+            nav3.style.display = "none";
+        } else {
+            nav3.style.display = "block";
+        }
+    }
 </script>
 
 <div class="zxc"></div>
@@ -60,113 +61,116 @@
 <div class="banner23"></div>
 
 <div class="work" style="background: #fff;">
-	<h2 class="biaoti">微信小程序相关案例</h2>
-	<h3 class="biaoti1">麦贝以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
-	<div class="work-neirong">
-		<a href="#"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../static/img/cylm.png">
-			</div>
-			<div class="work-border-font">
-				<p>嗨车邮联盟</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
-		<a href="#"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../static/img/mlxy.png">
-			</div>
-			<div class="work-border-font">
-				<p>马来西亚语</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
-		<a href="#"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../static/img/hmw.png">
-			</div>
-			<div class="work-border-font">
-				<p>会猫网</p>
-				<span>微信小程序</span>
-			</div>
-		</div></a>
-		<a href="#"><div class="work-border">
-			<div class="work-border-img">
-				<i>查看详情</i>
-				<img src="../static/img/qxj.png">
-			</div>
-			<div class="work-border-font">
-				<p>梁山气象局</p>
-				<span>移动应用开发</span>
-			</div>
-		</div></a>
-		
-	</div>
+    <h2 class="biaoti">微信小程序相关案例</h2>
+    <h3 class="biaoti1">麦贝以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
+    <div class="work-neirong">
+        <a href="#">
+            <div class="work-border">
+                <div class="work-border-img">
+                    <i>查看详情</i>
+                    <img src="../static/img/cylm.png">
+                </div>
+                <div class="work-border-font">
+                    <p>嗨车邮联盟</p>
+                    <span>移动应用开发</span>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="work-border">
+                <div class="work-border-img">
+                    <i>查看详情</i>
+                    <img src="../static/img/mlxy.png">
+                </div>
+                <div class="work-border-font">
+                    <p>马来西亚语</p>
+                    <span>移动应用开发</span>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="work-border">
+                <div class="work-border-img">
+                    <i>查看详情</i>
+                    <img src="../static/img/hmw.png">
+                </div>
+                <div class="work-border-font">
+                    <p>会猫网</p>
+                    <span>微信小程序</span>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="work-border">
+                <div class="work-border-img">
+                    <i>查看详情</i>
+                    <img src="../static/img/qxj.png">
+                </div>
+                <div class="work-border-font">
+                    <p>梁山气象局</p>
+                    <span>移动应用开发</span>
+                </div>
+            </div>
+        </a>
 
-	
+    </div>
+
+
 </div>
 
 <div class="xuanchuan">
-	<h3>麦贝，有品质的程序开发服务商</h3>
-	<div class="xuanchuan1">
-		<div>
-			<p>专业的技术团队</p>
-			<span>拥有专业的技术团队，其中技术人员占70%，平均经验5年以上</span>
-		</div>
-		<div>
-			<p>超强的产品优势</p>
-			<span>提供多项系统解决方案，可定制需求原生开发</span>
-		</div>
-		<div>
-			<p>平台部署全程指导</p>
-			<span>为各平台的搭建部署提供全程指导，助您实现快速上线和运营</span>
-		</div>
-		<div>
-			<p>完善的售后服务</p>
-			<span>配备专门的服务人员及技术人员，确保快速解决客户各种问题</span>
-		</div>
-	</div>
-	
+    <h3>麦贝，有品质的程序开发服务商</h3>
+    <div class="xuanchuan1">
+        <div>
+            <p>专业的技术团队</p>
+            <span>拥有专业的技术团队，其中技术人员占70%，平均经验5年以上</span>
+        </div>
+        <div>
+            <p>超强的产品优势</p>
+            <span>提供多项系统解决方案，可定制需求原生开发</span>
+        </div>
+        <div>
+            <p>平台部署全程指导</p>
+            <span>为各平台的搭建部署提供全程指导，助您实现快速上线和运营</span>
+        </div>
+        <div>
+            <p>完善的售后服务</p>
+            <span>配备专门的服务人员及技术人员，确保快速解决客户各种问题</span>
+        </div>
+    </div>
+
 
 </div>
 
 
 <!--di-->
 <div class="di">
-	<div class="di-kuang">
-		<div class="di-kuang-left">
-			<div class="di-kuang-left1">
-				<a href="index.html">网站首页</a>
-				<a href="2anli.html">客户案例</a>
-				<a href="3fangan.html">方案定制</a>
-				<a href="5zhaopin.html">招贤纳士</a>
-				<a href="6lianxi.html">联系我们</a>
-			</div>
-			<p>友情链接</p>
-			<div class="di-kuang-left2">
-				<a href="#">糖醋里脊科技</a>
-				<a href="#">芝麻数据</a>
-			</div>
-		</div>
-		<div class="di-kuang-right">
-			<h1>山东麦贝网络技术有限公司</h1>
-			<p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
-			<p>0537-6506777&nbsp;&nbsp;18563715777</p>
-		</div>
-	</div>
-	<div class="di1">
-		<span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
-	</div>
+    <div class="di-kuang">
+        <div class="di-kuang-left">
+            <div class="di-kuang-left1">
+                <a href="index.html">网站首页</a>
+                <a href="2anli.html">客户案例</a>
+                <a href="3fangan.html">方案定制</a>
+                <a href="5zhaopin.html">招贤纳士</a>
+                <a href="6lianxi.html">联系我们</a>
+            </div>
+            <p>友情链接</p>
+            <div class="di-kuang-left2">
+                <a href="#">糖醋里脊科技</a>
+                <a href="#">芝麻数据</a>
+            </div>
+        </div>
+        <div class="di-kuang-right">
+            <h1>山东麦贝网络技术有限公司</h1>
+            <p>山东省&nbsp;济宁市&nbsp;菱花路30号&nbsp;摩天大厦6楼</p>
+            <p>0537-6506777&nbsp;&nbsp;18563715777</p>
+        </div>
+    </div>
+    <div class="di1">
+        <span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
+    </div>
 </div>
 
 
-
-
-
-
-
-	</body>
+</body>
 </html>

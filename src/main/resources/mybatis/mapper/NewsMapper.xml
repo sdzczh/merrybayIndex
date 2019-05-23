@@ -159,7 +159,7 @@
        and  title = #{title,jdbcType=VARCHAR}
     </if>
     <if test="describe != null">
-       and  describe = #{describe,jdbcType=VARCHAR}
+       and  ne.describe = #{describe,jdbcType=VARCHAR}
     </if>
     <if test="details != null">
        and  details = #{details,jdbcType=VARCHAR}

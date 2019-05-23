@@ -37,13 +37,14 @@ public class CaseDemoController {
      */
     @RequestMapping("/{type}")
     public String getDetails(@PathVariable("type") Integer type, Model model, Integer page){
-        page = page == null ? 0 : page - 1;
-        Integer rows = 9;
         Map<Object, Object> map = new HashMap<>();
         map.put("serviceId", type);
+        /*page = page == null ? 0 : page - 1;
+        Integer rows = 9;
         map.put("firstResult", page * rows);
         map.put("maxResult", rows);
-        List<CaseDemo> caseDemos = caseDemoService.selectPaging(map);
+        List<CaseDemo> caseDemos = caseDemoService.selectPaging(map);*/
+        List<CaseDemo> caseDemos = caseDemoService.selectAll(map);
         model.addAttribute("caseDemos", caseDemos);
         List<FriendshipLink> links = friendshipLinkService.getLinks();
         JSONObject companys = comService.getInfo();
