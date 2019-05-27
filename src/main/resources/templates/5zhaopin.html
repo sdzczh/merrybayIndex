@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-		<title>山东麦贝网络技术有限公司-招贤纳士</title>
-		<link rel="stylesheet" href="../static/css/xiaomojiang.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    <title>山东麦贝网络技术有限公司-招贤纳士</title>
+    <link rel="stylesheet" th:href="@{/css/xiaomojiang.css}"/>
 
-	</head>
-	<body>
+</head>
+<body>
 
-<ul id="nav"> 
-		<div class="nav-neirong">
-			<img src="../static/img/logo.png">
-			<div>
-				<li><a th:href="@{/index}">首页</a></li>
-				<li><a th:href="@{/service}">服务&案例</a>
-					<ul>
-						<li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
-						<li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
-						<li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
-						<li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
-					</ul>
-				</li>
-				<li><a th:href="@{/news/list}">新闻&动态</a></li>
-				<li><a th:href="@{/human/list}" style="color: #036eb8;">招贤纳士</a></li>
-				<li><a th:href="@{/index/contact}">联系我们</a></li>
-			</div>
+<ul id="nav">
+    <div class="nav-neirong">
+        <img th:src="@{/img/logo.png}">
+        <div>
+            <li><a th:href="@{/index}">首页</a></li>
+            <li><a th:href="@{/service}">服务&案例</a>
+                <ul>
+                    <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
+                    <li><a th:href="@{/caseDemo} + '/1'">网站建设</a></li>
+                    <li><a th:href="@{/caseDemo} + '/2'">微信小程序</a></li>
+                    <li><a th:href="@{/caseDemo} + '/3'">解决方案</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/news/list}">新闻&动态</a></li>
+            <li><a th:href="@{/human/list}" style="color: #036eb8;">招贤纳士</a></li>
+            <li><a th:href="@{/index/contact}">联系我们</a></li>
+        </div>
     </div>
-</ul>        
+</ul>
 
 <div class="nav-yidong">
-	<img src="../static/img/logo.png">
-	<div id="nav2">
-		<p></p>
-		<p></p>
-		<p></p>
-	</div>
+    <img th:src="@{/img/logo.png}">
+    <div id="nav2">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
 </div>
 <div id="nav3">
-	<div>
-		<a th:href="@{/index}">首页</a>
-		<a th:href="@{/server}">服务&案例</a>
-		<a th:href="@{/news/list}">新闻&动态</a>
-		<a th:href="@{/human/list}" style="color: #036eb8;">招贤纳士</a>
-		<a th:href="@{/index/contact}">联系我们</a>
-	</div>
+    <div>
+        <a th:href="@{/index}">首页</a>
+        <a th:href="@{/server}">服务&案例</a>
+        <a th:href="@{/news/list}">新闻&动态</a>
+        <a th:href="@{/human/list}" style="color: #036eb8;">招贤纳士</a>
+        <a th:href="@{/index/contact}">联系我们</a>
+    </div>
 </div>
 <script>
-	nav2.onclick=function(){
-		if(nav3.style.display=="block"){
-			nav3.style.display="none";
-		}else{
-			nav3.style.display="block";	
-		}
-	}
+    nav2.onclick = function () {
+        if (nav3.style.display == "block") {
+            nav3.style.display = "none";
+        } else {
+            nav3.style.display = "block";
+        }
+    }
 </script>
 
 <div class="zxc"></div>
@@ -61,70 +62,84 @@
 <div class="banner5"></div>
 
 <div class="zhao">
-	<div class="zhao-left">
-		<div class="zhao1">
-			<a th:href="@{/human/list/0}"><p th:class="${category} == 0 ? 'team2' : 'team1'">技术</p></a>
-			<a th:href="@{/human/list/1}"><p th:class="${category} == 1 ? 'team2' : 'team1'">销售</p></a>
-			<a th:href="@{/human/list/2}"><p th:class="${category} == 2 ? 'team2' : 'team1'">行政</p></a>
-		</div>
-		<tr th:each="human : ${humans}">
-			<div class="zhao2">
-				<div class="zhao3">
-					<span th:text="'发布日期：' + ${#dates.format(human.updateTime, 'yyyy-MM-dd')}"></span>
-					<span th:text="'工作地点：' + ${human.place}"></span>
-					<span th:text="'招聘人数：' + ${human.num}"></span>
-					<span th:text="'工作经验：' + ${human.year} + '年以上'"></span>
-				</div>
-				<div class="zhao4">
-					<h6 th:text="${human.jobsName}"></h6>
-					<p>岗位要求：</p>
-					<span th:text="${human.jobsRequire}"></span>
-					<p>岗位职责：</p>
-					<span th:text="${human.jobsDuty}"></span>
-				</div>
-			</div>
-		</tr>
-		
-		
-	</div>
-	<div class="zhao-right">
-		<p>联系方式：</p>
-		<span th:text="${'邮箱：' + companyInfo.email}"></span>
-		<span th:text="${'电话：' + companyInfo.phone}"></span>
-		<span th:text="${'福利：' + companyInfo.welfare}"></span>
-	</div>
-	
+    <div class="zhao-left">
+        <div class="zhao1">
+            <a th:href="@{/human/list/0}"><p th:class="${category} == 0 ? 'team2' : 'team1'">技术</p></a>
+            <a th:href="@{/human/list/1}"><p th:class="${category} == 1 ? 'team2' : 'team1'">销售</p></a>
+            <a th:href="@{/human/list/2}"><p th:class="${category} == 2 ? 'team2' : 'team1'">行政</p></a>
+        </div>
+        <tr th:each="human : ${humans}">
+            <div class="zhao2">
+                <div class="zhao3">
+                    <span th:text="'发布日期：' + ${#dates.format(human.updateTime, 'yyyy-MM-dd')}"></span>
+                    <span th:text="'工作地点：' + ${human.place}"></span>
+                    <span th:text="'招聘人数：' + ${human.num}"></span>
+                    <span th:text="'工作经验：' + ${human.year} + '年以上'"></span>
+                </div>
+                <div class="zhao4">
+                    <h6 th:text="${human.jobsName}"></h6>
+                    <p>岗位要求：</p>
+                    <span th:utext="${human.jobsRequire}" class="notetext"></span>
+                    <p>岗位职责：</p>
+                    <span th:utext="${human.jobsDuty}" class="notetext2"></span>
+                </div>
+            </div>
+        </tr>
+
+
+    </div>
+    <div class="zhao-right">
+        <p>联系方式：</p>
+        <span th:text="${'邮箱：' + companyInfo.email}"></span>
+        <span th:text="${'电话：' + companyInfo.phone}"></span>
+        <span th:text="${'福利：' + companyInfo.welfare}"></span>
+    </div>
+
 </div>
 
 
 <!--di-->
 <div class="di">
-	<div class="di-kuang">
-		<div class="di-kuang-left">
-			<div class="di-kuang-left1">
-				<a th:href="@{/index}">网站首页</a>
-				<a th:href="@{/server}">客户案例</a>
-				<a href="3fangan.html">方案定制</a>
-				<a th:href="@{/human/list}">招贤纳士</a>
-				<a th:href="@{/index/contact}">联系我们</a>
-			</div>
-			<p>友情链接</p>
-			<div class="di-kuang-left2">
-				<div th:each="links : ${friends}" style="float: left">
-					<a th:text="${links.title}" th:href="${links.href}"></a>
-				</div>
-			</div>
-		</div>
-		<div class="di-kuang-right">
-			<h1 th:text="${companyInfo.companyName}"></h1>
-			<p th:text="${companyInfo.address}"></p>
-			<p th:text="${companyInfo.phone}"></p>
-		</div>
-	</div>
-	<div class="di1">
-		<span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
-	</div>
+    <div class="di-kuang">
+        <div class="di-kuang-left">
+            <div class="di-kuang-left1">
+                <a th:href="@{/index}">网站首页</a>
+                <a th:href="@{/server}">客户案例</a>
+                <a href="3fangan.html">方案定制</a>
+                <a th:href="@{/human/list}">招贤纳士</a>
+                <a th:href="@{/index/contact}">联系我们</a>
+            </div>
+            <p>友情链接</p>
+            <div class="di-kuang-left2">
+                <div th:each="links : ${friends}" style="float: left">
+                    <a th:text="${links.title}" th:href="${links.href}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="di-kuang-right">
+            <h1 th:text="${companyInfo.companyName}"></h1>
+            <p th:text="${companyInfo.address}"></p>
+            <p th:text="${companyInfo.phone}"></p>
+        </div>
+    </div>
+    <div class="di1">
+        <span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
+    </div>
 </div>
 
-	</body>
+</body>
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript">
+    var obj = document.getElementsByClassName("notetext");
+    for (var i = 0; i < obj.length; i++) {
+        obj[i].innerHTML = obj[i].innerText;//这样重新设置html代码为解析后的格式
+
+    }
+
+    var obj2 = document.getElementsByClassName("notetext2");
+    for (var i = 0; i < obj2.length; i++) {
+        obj2[i].innerHTML = obj2[i].innerText;//这样重新设置html代码为解析后的格式
+
+    }
+</script>
 </html>
