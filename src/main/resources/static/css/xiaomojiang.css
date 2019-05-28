@@ -693,5 +693,13 @@ ul, li{font-style: normal;list-style:none;}
 
 }
 
-
+.float{position: fixed;right: 10px;bottom:30%;width: 200px;z-index: 999;}
+.float div{width: 200px;height: 200px;position: absolute;}
+.float div img{width: 200px;height: 200px;display: none;}
+.float div:hover img{display: block;}
+.float1{background: url("../img/ls.png");background-size: 200px;top: 0;}
+.float2{background: url("../img/lw.png");background-size: 200px;top: 70px;}
+@media screen and (max-width:1200px) {
+    .float{display: none;}
+}
 

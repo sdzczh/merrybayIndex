@@ -4,8 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		<title>山东麦贝网络技术有限公司</title>
-		<link rel="stylesheet" href="../static/css/xiaomojiang.css" />
-		<link rel="stylesheet" href="../static/css/swiper.css" />
+		<link rel="stylesheet" th:href="@{/css/xiaomojiang.css}" />
+		<link rel="stylesheet" th:href="@{/css/swiper.css}"/>
 
 	</head>
 	<body>
@@ -281,11 +281,20 @@
             <p th:text="${companys.phone}"></p>
         </div>
 	</div>
+
 	<div class="di1">
 		<span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
 	</div>
 </div>
-
+<!--float float float float float float float float float float float-->
+<div class="float">
+	<div class="float1">
+		<img th:src="@{/img/ls1.png}">
+	</div>
+	<div class="float2">
+		<img th:src="@{/img/lw1.png}">
+	</div>
+</div>
 
 <div class="bg1"></div>
 

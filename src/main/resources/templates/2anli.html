@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		<title>山东麦贝网络技术有限公司-服务&案例</title>
-		<link rel="stylesheet" href="../static/css/xiaomojiang.css" />
+		<link rel="stylesheet" th:href="@{/css/xiaomojiang.css}" />
 
 	</head>
 	<body>
@@ -150,6 +150,15 @@
 			<h1 th:text="${companys.companyName}"></h1>
 			<p th:text="${companys.address}"></p>
 			<p th:text="${companys.phone}"></p>
+		</div>
+	</div>
+	<!--float float float float float float float float float float float-->
+	<div class="float">
+		<div class="float1">
+			<img th:src="@{/img/ls1.png}">
+		</div>
+		<div class="float2">
+			<img th:src="@{/img/lw1.png}">
 		</div>
 	</div>
 	<div class="di1">
