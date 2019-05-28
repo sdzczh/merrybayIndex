@@ -1,0 +1,50 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+
+2019-05-22 16:10:06.550  INFO 15960 --- [           main] com.zh.program.ProgramApplication        : Starting ProgramApplication v0.0.1-SNAPSHOT on DESKTOP-4SEM3BL with PID 15960 (H:\MyWork\merrybay\target\mbwl.jar started by 赵赫 in H:\MyWork\jpom\agent-2.4.0-release)
+2019-05-22 16:10:06.584  INFO 15960 --- [           main] com.zh.program.ProgramApplication        : No active profile set, falling back to default profiles: default
+2019-05-22 16:10:10.243  INFO 15960 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-22 16:10:10.248  INFO 15960 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-22 16:10:10.659  INFO 15960 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 396ms. Found 1 repository interfaces.
+2019-05-22 16:10:10.738  INFO 15960 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-05-22 16:10:10.740  INFO 15960 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-22 16:10:10.792  INFO 15960 --- [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zh.program.Dao.UserDao.
+2019-05-22 16:10:10.793  INFO 15960 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 0 repository interfaces.
+2019-05-22 16:10:11.848  INFO 15960 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$110b6e3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-22 16:10:13.560  INFO 15960 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8078 (http)
+2019-05-22 16:10:13.687  INFO 15960 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-22 16:10:13.689  INFO 15960 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-05-22 16:10:13.741  INFO 15960 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [H:\java\jdk\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;H:\java\jdk\bin;H:\java\jre\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Google Chrome;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\赵赫\AppData\Local\Microsoft\WindowsApps;C:\windows\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Utilities 1.6\;F:\apache-maven-3.2.5\bin;F:\Redis\;F:\Apache\Apache24\bin;F:\php;F:\Composer;F:\SVN\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;F:\Git\cmd;F:\nodejs\;C:\Users\赵赫\AppData\Local\Microsoft\WindowsApps;C:\Users\赵赫\AppData\Roaming\Composer\vendor\bin;C:\Users\赵赫\AppData\Roaming\npm;.]
+2019-05-22 16:10:16.164  INFO 15960 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-22 16:10:16.164  INFO 15960 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9326 ms
+----------------------->过滤器被创建
+2019-05-22 16:10:16.897  INFO 15960 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-22 16:10:17.478  INFO 15960 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-22 16:10:17.734  INFO 15960 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-22 16:10:18.039  INFO 15960 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-05-22 16:10:18.041  INFO 15960 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-22 16:10:18.573  INFO 15960 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-22 16:10:20.239  INFO 15960 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-05-22 16:10:21.678  INFO 15960 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-22 16:10:24.569  INFO 15960 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-22 16:10:25.088  WARN 15960 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-22 16:10:25.380  WARN 15960 --- [           main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-05-22 16:10:25.523  INFO 15960 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-05-22 16:10:26.957  INFO 15960 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8078 (http) with context path ''
+2019-05-22 16:10:26.961  INFO 15960 --- [           main] com.zh.program.ProgramApplication        : Started ProgramApplication in 22.696 seconds (JVM running for 26.809)
+2019-05-22 16:10:31.269  INFO 15960 --- [nio-8078-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-22 16:10:31.270  INFO 15960 --- [nio-8078-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-22 16:10:31.316  INFO 15960 --- [nio-8078-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 46 ms
+--------------------->过滤器：请求地址/index
+2019-05-22 16:10:31.498  INFO 15960 --- [nio-8078-exec-2] c.z.p.C.a.AuthorizationInterceptor       : 地址---->/index
+2019-05-22 16:10:31.498  INFO 15960 --- [nio-8078-exec-2] c.z.p.C.a.AuthorizationInterceptor       : 参数---->params:null,sign=null,token=null,key=null
+2019-05-22 16:10:31.513  INFO 15960 --- [nio-8078-exec-2] c.z.p.C.a.AuthorizationInterceptor       : params---->{}
+--------------------->过滤器：请求地址/favicon.ico
