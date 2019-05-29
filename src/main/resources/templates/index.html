@@ -12,7 +12,7 @@
 
 <ul id="nav"> 
 		<div class="nav-neirong">
-			<img src="../static/img/logo.png">
+			<img th:src="@{/img/logo.png}">
     		<div>
     			<li><a th:href="@{/index}" style="color: #036eb8;">首页</a></li>
             <li><a th:href="@{/service}">服务&案例</a>
@@ -31,7 +31,7 @@
 </ul>        
 
 <div class="nav-yidong">
-	<img src="../static/img/logo.png">
+	<img th:src="@{/img/logo.png}">
 	<div id="nav2">
 		<p></p>
 		<p></p>
@@ -77,23 +77,23 @@
 	<h2 class="biaoti">麦贝网络，有品质的程序开发服务商</h2>
 	<h3 class="biaoti1">山东麦贝网络技术有限公司是一家致力于高品质软件定制开发和创意广告设计的创意互联网公司</h3>
 	<div class="icon-neirong">
-		<a href="app.html"><div class="icon2">
-			<img src="../static/img/icon22.png">
+		<a th:href="@{/caseDemo} + '/0'"><div class="icon2">
+			<img th:src="@{/img/icon22.png}">
 			<p>APP开发</p>
 			<span>移动互联网的浪潮里，打造属于自己的诺亚方舟</span>
 		</div></a>
-		<a href="wangzhan.html"><div class="icon1">
-			<img src="../static/img/icon11.png">
+		<a th:href="@{/caseDemo} + '/1'"><div class="icon1">
+			<img th:src="@{/img/icon11.png}">
 			<p>网站建设</p>
 			<span>一个好的企业网站，是每个企业必须要拥有的</span>
 		</div></a>
-		<a href="weixin.html"><div class="icon3">
-			<img src="../static/img/icon33.png">
+		<a th:href="@{/caseDemo} + '/2'"><div class="icon3">
+			<img th:src="@{img/icon33.png}">
 			<p>微信小程序</p>
 			<span>无需下载，触手可及，随时随地打开应用</span>
 		</div></a>
-		<a href="3fangan.html"><div class="icon4">
-			<img src="../static/img/icon44.png">
+		<a th:href="@{/caseDemo} + '/3'"><div class="icon4">
+			<img th:src="@{/img/icon44.png}">
 			<p>方案定制</p>
 			<span>深入挖掘需求，为用户制定完整的解决方案</span>
 		</div></a>
@@ -126,7 +126,7 @@
 	</div>
 	<a th:href="@{/service}"><div class="gengduo">
 		<p>查看更多案例</p>
-		<img src="../static/img/jiantou.png" />
+		<img th:src="@{/img/jiantou.png}" />
 	</div></a>
 	
 </div>
@@ -142,7 +142,7 @@
 		</div>
 	</div>
 	<div class="team-wei" id="one">
-		<img src="img/tuandui1.png">
+		<img th:src="@{/img/tuandui1.png}">
 		<div>
 			<h5>运营推广团队</h5>
 			<p>网站SEO优化推广</p >
@@ -151,7 +151,7 @@
 		</div>
 	</div>
 	<div class="team-wei" id="two" style="display: none;">
-		<img src="img/tuandui2.png">
+		<img th:src="@{/img/tuandui2.png}">
 		<div>
 			<h5>产品设计团队</h5>
 			<p>需求分析、原型制作、效果图设计</p >
@@ -160,7 +160,7 @@
 		</div>
 	</div>
 	<div class="team-wei" id="three" style="display: none;">
-		<img src="img/tuandui3.png">
+		<img th:src="@{/img/tuandui3.png}">
 		<div>
 			<h5>程序开发团队</h5>
 			<p>原生APP开发、网站建设、小程序开发</p >
@@ -169,7 +169,7 @@
 		</div>
 	</div>
 	<div class="team-wei" id="four" style="display: none;">
-		<img src="img/tuandui4.png">
+		<img th:src="@{/img/tuandui4.png}">
 		<div>
 			<h5>售后服务团队</h5>
 			<p>售前咨询、售后维护</p >
@@ -195,7 +195,7 @@
 	</div>
 	<a th:href="@{news/list}"><div class="gengduo">
 		<p>查看更多资讯</p>
-		<img src="../static/img/jiantou.png" />
+		<img th:src="@{/img/jiantou.png}" />
 	</div></a>	
 	
 </div>
@@ -207,35 +207,35 @@
 	<div class="liucheng1">
 		<div class="liucheng2">
 			<div>
-				<img src="../static/img/1.png">
+				<img th:src="@{/img/1.png}">
 			</div>
 			<p>需求调研</p>
 			<span>为您提供全面的需求策划服务，针对需求提供一系列解决方案咨询。</span>
 		</div>
 		<div class="liucheng2">
 			<div>
-				<img src="../static/img/2.png">
+				<img th:src="@{/img/2.png}">
 			</div>
 			<p>合约立项</p>
 			<span>细化需求，制作完善的项目开发文档与项目进度计划书。</span>
 		</div>
 		<div class="liucheng2">
 			<div>
-				<img src="../static/img/3.png">
+				<img th:src="@{/img/3.png}">
 			</div>
 			<p>交互/视觉/程序设计</p>
 			<span>优秀的设计团队，对完美的设计有着执着的坚持和追求，严格把控每一个细节。</span>
 		</div>
 		<div class="liucheng2">
 			<div>
-				<img src="../static/img/4.png">
+				<img th:src="@{/img/4.png}">
 			</div>
 			<p>前端/后端/程序开发</p>
 			<span>为您提供全面的需求策划服务，制作完善的项目书，需求书、策划书。</span>
 		</div>
 		<div class="liucheng2">
 			<div>
-				<img src="../static/img/5.png">
+				<img th:src="@{/img/5.png}">
 			</div>
 			<p>测试上线</p>
 			<span>我们对的产品交付遵循严格的测试标准，不达要求绝不交付。</span>
@@ -299,7 +299,7 @@
 
 
 		
-<script type="text/javascript" src="../static/js/swiper.min.js" ></script>
+<script type="text/javascript" th:src="@{/js/swiper.min.js}" ></script>
 <script>        
   var mySwiper = new Swiper ('.swiper-container', {
     direction: 'horizontal', // 垂直切换选项

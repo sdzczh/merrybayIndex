@@ -59,7 +59,9 @@
 
 <div class="zxc"></div>
 
-<div class="banner2"></div>
+<div class="banner2">
+	<img th:src="${banners}">
+</div>
 
 <div class="anli">
 	<a th:href="@{'/caseDemo/' + ${services[0].type}}">

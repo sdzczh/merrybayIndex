@@ -3,8 +3,10 @@ package com.zh.program.Controller;
 import com.alibaba.fastjson.JSONObject;
 import com.zh.program.Common.enums.ResultCode;
 import com.zh.program.Dto.Result;
+import com.zh.program.Entrty.Banner;
 import com.zh.program.Entrty.FriendshipLink;
 import com.zh.program.Entrty.ServiceProvider;
+import com.zh.program.Service.BannerService;
 import com.zh.program.Service.CompanyinformationService;
 import com.zh.program.Service.FriendshipLinkService;
 import com.zh.program.Service.ServiceProviderService;
@@ -30,10 +32,12 @@ public class ServiceProviderController {
     private FriendshipLinkService friendshipLinkService;
     @Autowired
     private CompanyinformationService comService;
+    @Autowired
+    private BannerService bannerService;
 
 
     /**
-     * 获取服务类型案例 0:APP开发,1:网站建设,2:微信小程序
+     * 获取服务类型案例 0:APP开发, 1:网站建设, 2:微信小程序, 3:解决方案
      */
     @RequestMapping("")
     public String getAll(Model model){
@@ -44,6 +48,15 @@ public class ServiceProviderController {
         JSONObject companys = comService.getInfo();
         model.addAttribute("friends", links);
         model.addAttribute("companys", companys);
+        map = new HashMap<>();
+        map.put("aa",2);
+        List<Banner> list1 = bannerService.selectAll(map);
+        if(list1.size() == 0){
+            return Result.toResult(ResultCode.RESULE_DATA_NONE);
+        }
+        Banner banner = list1.get(0);
+        model.addAttribute("banners",banner.getImgLink());
+        //return Result.toResult(ResultCode.SUCCESS, banner.getImgLink());
         return "2anli.html";
     }
 

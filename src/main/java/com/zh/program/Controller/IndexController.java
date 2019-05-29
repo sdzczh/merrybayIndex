@@ -52,8 +52,17 @@ public class IndexController {
         map = new HashMap<>();
         List<Partners> partners = partnersService.selectAll(map);
         model.addAttribute("partners", partners);
+        map = new HashMap<>();
+        map.put("aa",1);
         List<Banner> banners = bannerService.selectAll(map);
-        model.addAttribute("banners", banners);
+        List<Banner> list = new LinkedList<>();
+        for (Banner banner : banners){
+            Banner banner1 = new Banner();
+            banner1.setImgLink(banner.getImgLink());
+            list.add(banner1);
+        }
+        model.addAttribute("banners", list);
+        //return Result.toResult(ResultCode.SUCCESS,banners);
         return "index.html";
     }
 

@@ -81,4 +81,5 @@ public interface BannerService {
      * @date: 2019-05-08 14:19:04
      **/ 
     int selectCount(Map<Object, Object> param);
+
 }
