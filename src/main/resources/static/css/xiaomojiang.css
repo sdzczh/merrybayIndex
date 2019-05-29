@@ -703,3 +703,8 @@ ul, li{font-style: normal;list-style:none;}
     .float{display: none;}
 }
 
+.banner0{width: 100%;overflow: hidden;}
+.banner0 img{width: 100%;}
+@media screen and (max-width: 1200px) {
+    .banner0 img{width: 160%;margin-left: -30%;}
+}
