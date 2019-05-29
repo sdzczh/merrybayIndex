@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-		<title>山东麦贝网络技术有限公司</title>
-		<link rel="stylesheet" th:href="@{/css/xiaomojiang.css}" />
-		<link rel="stylesheet" th:href="@{/css/swiper.css}"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    <title>山东麦贝网络技术有限公司</title>
+    <link rel="stylesheet" th:href="@{/css/xiaomojiang.css}"/>
+    <link rel="stylesheet" th:href="@{/css/swiper.css}"/>
 
-	</head>
-	<body>
+</head>
+<body>
 
-<ul id="nav"> 
-		<div class="nav-neirong">
-			<img th:src="@{/img/logo.png}">
-    		<div>
-    			<li><a th:href="@{/index}" style="color: #036eb8;">首页</a></li>
+<ul id="nav">
+    <div class="nav-neirong">
+        <img th:src="@{/img/logo.png}">
+        <div>
+            <li><a th:href="@{/index}" style="color: #036eb8;">首页</a></li>
             <li><a th:href="@{/service}">服务&案例</a>
                 <ul>
                     <li><a th:href="@{/caseDemo} + '/0'">APP开发</a></li>
@@ -25,36 +26,36 @@
             </li>
             <li><a th:href="@{/news/list}">新闻&动态</a></li>
             <li><a th:href="@{/human/list}">招贤纳士</a></li>
-            <li><a th:href="@{/index/contact}">联系我们</a></li> 
-    		</div>
+            <li><a th:href="@{/index/contact}">联系我们</a></li>
+        </div>
     </div>
-</ul>        
+</ul>
 
 <div class="nav-yidong">
-	<img th:src="@{/img/logo.png}">
-	<div id="nav2">
-		<p></p>
-		<p></p>
-		<p></p>
-	</div>
+    <img th:src="@{/img/logo.png}">
+    <div id="nav2">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
 </div>
 <div id="nav3">
-	<div>
-		<a th:href="@{/index}" style="color: #036eb8;">首页</a>
-		<a th:href="@{/server}">服务&案例</a>
+    <div>
+        <a th:href="@{/index}" style="color: #036eb8;">首页</a>
+        <a th:href="@{/server}">服务&案例</a>
         <a th:href="@{/news/list}">新闻&动态</a>
         <a th:href="@{/human/list}">招贤纳士</a>
         <a th:href="@{/index/contact}">联系我们</a>
-	</div>
+    </div>
 </div>
 <script>
-	nav2.onclick=function(){
-		if(nav3.style.display=="block"){
-			nav3.style.display="none";
-		}else{
-			nav3.style.display="block";	
-		}
-	}
+    nav2.onclick = function () {
+        if (nav3.style.display == "block") {
+            nav3.style.display = "none";
+        } else {
+            nav3.style.display = "block";
+        }
+    }
 </script>
 
 <div class="zxc"></div>
@@ -62,300 +63,312 @@
 <!--banner  -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-			<div th:each="banner : ${banners}" class="swiper-slide">
-                <img th:src="${banner.imgLink}">
-            </div>
+        <div th:each="banner : ${banners}" class="swiper-slide">
+            <img th:src="${banner.imgLink}">
+        </div>
     </div>
     <!-- 如果需要导航按钮 -->
     <div class="swiper-button-prev swiper-button-white"></div>
     <div class="swiper-button-next swiper-button-white"></div>
-    
+
 </div>
 
 <!--icon  icon  icon  icon  icon  icon  icon  icon  icon  icon  -->
 <div class="icon">
-	<h2 class="biaoti">麦贝网络，有品质的程序开发服务商</h2>
-	<h3 class="biaoti1">山东麦贝网络技术有限公司是一家致力于高品质软件定制开发和创意广告设计的创意互联网公司</h3>
-	<div class="icon-neirong">
-		<a th:href="@{/caseDemo} + '/0'"><div class="icon2">
-			<img th:src="@{/img/icon22.png}">
-			<p>APP开发</p>
-			<span>移动互联网的浪潮里，打造属于自己的诺亚方舟</span>
-		</div></a>
-		<a th:href="@{/caseDemo} + '/1'"><div class="icon1">
-			<img th:src="@{/img/icon11.png}">
-			<p>网站建设</p>
-			<span>一个好的企业网站，是每个企业必须要拥有的</span>
-		</div></a>
-		<a th:href="@{/caseDemo} + '/2'"><div class="icon3">
-			<img th:src="@{img/icon33.png}">
-			<p>微信小程序</p>
-			<span>无需下载，触手可及，随时随地打开应用</span>
-		</div></a>
-		<a th:href="@{/caseDemo} + '/3'"><div class="icon4">
-			<img th:src="@{/img/icon44.png}">
-			<p>方案定制</p>
-			<span>深入挖掘需求，为用户制定完整的解决方案</span>
-		</div></a>
-	</div>
+    <h2 class="biaoti">麦贝网络，有品质的程序开发服务商</h2>
+    <h3 class="biaoti1">山东麦贝网络技术有限公司是一家致力于高品质软件定制开发和创意广告设计的创意互联网公司</h3>
+    <div class="icon-neirong">
+        <a th:href="@{/caseDemo} + '/0'">
+            <div class="icon2">
+                <img th:src="@{/img/icon22.png}">
+                <p>APP开发</p>
+                <span>移动互联网的浪潮里，打造属于自己的诺亚方舟</span>
+            </div>
+        </a>
+        <a th:href="@{/caseDemo} + '/1'">
+            <div class="icon1">
+                <img th:src="@{/img/icon11.png}">
+                <p>网站建设</p>
+                <span>一个好的企业网站，是每个企业必须要拥有的</span>
+            </div>
+        </a>
+        <a th:href="@{/caseDemo} + '/2'">
+            <div class="icon3">
+                <img th:src="@{img/icon33.png}">
+                <p>微信小程序</p>
+                <span>无需下载，触手可及，随时随地打开应用</span>
+            </div>
+        </a>
+        <a th:href="@{/caseDemo} + '/3'">
+            <div class="icon4">
+                <img th:src="@{/img/icon44.png}">
+                <p>方案定制</p>
+                <span>深入挖掘需求，为用户制定完整的解决方案</span>
+            </div>
+        </a>
+    </div>
 </div>
 
 <!--案例 案例 案例 案例 案例 案例 案例 案例 案例 案例 案例-->
 <div class="work">
-	<h2 class="biaoti">看一看我们最近的作品</h2>
-	<h3 class="biaoti1">麦贝网络以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
-	<div class="work-neirong">
-                <div class="work-border" th:each="caseDemo : ${caseDemos}">
-                    <a th:href="@{'/caseDemo/detail/' + ${caseDemo.id}}">
-                    <div class="work-border-img">
-                        <i>查看详情</i>
-                        <img th:src="${caseDemo.imgLink}">
-                    </div>
-                    <div class="work-border-font">
-                        <p th:text="${caseDemo.title}"></p>
-                        <div th:switch="${caseDemo.serviceId}">
-                            <span th:case="0">APP开发</span>
-                            <span th:case="1">网站建设</span>
-                            <span th:case="2">微信小程序</span>
-                            <span th:case="3">解决方案定制</span>
-                        </div>
-                    </div>
-                    </a>
+    <h2 class="biaoti">看一看我们最近的作品</h2>
+    <h3 class="biaoti1">麦贝网络以技术研发为主导，拥有技术成熟配置齐整配合默契的技术团队，为客户定制设计开发高品质软件</h3>
+    <div class="work-neirong">
+        <div class="work-border" th:each="caseDemo : ${caseDemos}">
+            <a th:href="@{'/caseDemo/detail/' + ${caseDemo.id}}">
+                <div class="work-border-img">
+                    <i>查看详情</i>
+                    <img th:src="${caseDemo.imgLink}">
                 </div>
+                <div class="work-border-font">
+                    <p th:text="${caseDemo.title}"></p>
+                    <div th:switch="${caseDemo.serviceId}">
+                        <span th:case="0">APP开发</span>
+                        <span th:case="1">网站建设</span>
+                        <span th:case="2">微信小程序</span>
+                        <span th:case="3">解决方案定制</span>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-	</div>
-	<a th:href="@{/service}"><div class="gengduo">
-		<p>查看更多案例</p>
-		<img th:src="@{/img/jiantou.png}" />
-	</div></a>
-	
+    </div>
+    <a th:href="@{/service}">
+        <div class="gengduo">
+            <p>查看更多案例</p>
+            <img th:src="@{/img/jiantou.png}"/>
+        </div>
+    </a>
+
 </div>
 <!--团队  团队  团队  团队  团队  团队  团队  团队  团队  -->
 <div class="team">
-	<h3 class="biaoti">优秀的团队实力</h3>
-	<div class="team-tou">
-		<div>
-			<p class="team2" id="onea">运营推广团队</p >
-			<p class="team1" id="twoa">产品设计团队</p >
-			<p class="team1" id="threea">技术开发团队</p >
-			<p class="team1" id="foura">售后服务团队</p >
-		</div>
-	</div>
-	<div class="team-wei" id="one">
-		<img th:src="@{/img/tuandui1.png}">
-		<div>
-			<h5>运营推广团队</h5>
-			<p>网站SEO优化推广</p >
-			<a></a>
-			<span>基于互联网平台，利用信息技术与软件工具满足公司与客户之间交换概念、产品、服务的过程，通过在线活动创造、宣传、传递客户价值，并且对客户关系进行管理，以达到一定营销目的互联网时代的新型营销活动。</span>
-		</div>
-	</div>
-	<div class="team-wei" id="two" style="display: none;">
-		<img th:src="@{/img/tuandui2.png}">
-		<div>
-			<h5>产品设计团队</h5>
-			<p>需求分析、原型制作、效果图设计</p >
-			<a></a>
-			<span>坚持“以市场为导向、以用户为中心、为客户价值而创新”的核心价值理念，发展以设计为核心的产品服务，致力于为客户提供从产品概念到市场导入的全面解决方案。</span>
-		</div>
-	</div>
-	<div class="team-wei" id="three" style="display: none;">
-		<img th:src="@{/img/tuandui3.png}">
-		<div>
-			<h5>程序开发团队</h5>
-			<p>原生APP开发、网站建设、小程序开发</p >
-			<a></a>
-			<span>我们拥有完善、成熟的管理和开发流程，确保为客户提供高质量的服务和产品。遵循严格的安全标准，实施严密的安全措施，以保护客户的信息安全。</span>
-		</div>
-	</div>
-	<div class="team-wei" id="four" style="display: none;">
-		<img th:src="@{/img/tuandui4.png}">
-		<div>
-			<h5>售后服务团队</h5>
-			<p>售前咨询、售后维护</p >
-			<a></a>
-			<span>软件与企业的融合使服务触及生活每一处。我们通过建立完善的服务网络，向顾客提供专业化和标准化的服务，使用者得到无处不在的便利。通过契而不舍的追求，让客户体验满意服务。</span>
-		</div>
-	</div>
+    <h3 class="biaoti">优秀的团队实力</h3>
+    <div class="team-tou">
+        <div>
+            <p class="team2" id="onea">运营推广团队</p>
+            <p class="team1" id="twoa">产品设计团队</p>
+            <p class="team1" id="threea">技术开发团队</p>
+            <p class="team1" id="foura">售后服务团队</p>
+        </div>
+    </div>
+    <div class="team-wei" id="one">
+        <img th:src="@{/img/tuandui1.png}">
+        <div>
+            <h5>运营推广团队</h5>
+            <p>网站SEO优化推广</p>
+            <a></a>
+            <span>基于互联网平台，利用信息技术与软件工具满足公司与客户之间交换概念、产品、服务的过程，通过在线活动创造、宣传、传递客户价值，并且对客户关系进行管理，以达到一定营销目的互联网时代的新型营销活动。</span>
+        </div>
+    </div>
+    <div class="team-wei" id="two" style="display: none;">
+        <img th:src="@{/img/tuandui2.png}">
+        <div>
+            <h5>产品设计团队</h5>
+            <p>需求分析、原型制作、效果图设计</p>
+            <a></a>
+            <span>坚持“以市场为导向、以用户为中心、为客户价值而创新”的核心价值理念，发展以设计为核心的产品服务，致力于为客户提供从产品概念到市场导入的全面解决方案。</span>
+        </div>
+    </div>
+    <div class="team-wei" id="three" style="display: none;">
+        <img th:src="@{/img/tuandui3.png}">
+        <div>
+            <h5>程序开发团队</h5>
+            <p>原生APP开发、网站建设、小程序开发</p>
+            <a></a>
+            <span>我们拥有完善、成熟的管理和开发流程，确保为客户提供高质量的服务和产品。遵循严格的安全标准，实施严密的安全措施，以保护客户的信息安全。</span>
+        </div>
+    </div>
+    <div class="team-wei" id="four" style="display: none;">
+        <img th:src="@{/img/tuandui4.png}">
+        <div>
+            <h5>售后服务团队</h5>
+            <p>售前咨询、售后维护</p>
+            <a></a>
+            <span>软件与企业的融合使服务触及生活每一处。我们通过建立完善的服务网络，向顾客提供专业化和标准化的服务，使用者得到无处不在的便利。通过契而不舍的追求，让客户体验满意服务。</span>
+        </div>
+    </div>
 </div>
 
 
 <!--新闻  新闻  新闻  新闻  新闻  新闻  新闻  新闻  新闻  新闻  新闻  新闻  -->
 <div class="news">
-	<h2 class="biaoti">资讯共享，链接未来</h2>
-	<div class="news1">
-		<div th:each="newss : ${news}">
-			<a th:href="@{'/news/details/' + ${newss.id}}">
-				<img th:src="${newss.imgLink}">
-				<h6 th:text="${newss.title}">喊了半个世纪的人工智能究竟还缺点啥究竟还缺点啥究竟还缺点啥</h6>
-				<p th:text="${newss.describe}">拥有一个企业网站是每一个企业都应该做的必修课，企业啊网站的设计、功能、访问速度都会直接影响到客户对企业户对企业</p>
-				<span th:text="${#dates.format(newss.createTime,'yyyy-MM-dd')}">2018-01-26</span>
-			</a>
-		</div>k
-	</div>
-	<a th:href="@{news/list}"><div class="gengduo">
-		<p>查看更多资讯</p>
-		<img th:src="@{/img/jiantou.png}" />
-	</div></a>	
-	
+    <h2 class="biaoti">资讯共享，链接未来</h2>
+    <div class="news1">
+        <div th:each="newss : ${news}">
+            <a th:href="@{'/news/details/' + ${newss.id}}">
+                <img th:src="${newss.imgLink}">
+                <h6 th:text="${newss.title}">喊了半个世纪的人工智能究竟还缺点啥究竟还缺点啥究竟还缺点啥</h6>
+                <p th:text="${newss.describe}">拥有一个企业网站是每一个企业都应该做的必修课，企业啊网站的设计、功能、访问速度都会直接影响到客户对企业户对企业</p>
+                <span th:text="${#dates.format(newss.createTime,'yyyy-MM-dd')}">2018-01-26</span>
+            </a>
+        </div>
+        k
+    </div>
+    <a th:href="@{news/list}">
+        <div class="gengduo">
+            <p>查看更多资讯</p>
+            <img th:src="@{/img/jiantou.png}"/>
+        </div>
+    </a>
+
 </div>
 
 
 <!--流程 流程 流程 流程 流程 流程 流程 流程 流程 流程 流程 流程 -->
 <div class="liucheng">
-	<h3>严格把控每一项流程</h3>
-	<div class="liucheng1">
-		<div class="liucheng2">
-			<div>
-				<img th:src="@{/img/1.png}">
-			</div>
-			<p>需求调研</p>
-			<span>为您提供全面的需求策划服务，针对需求提供一系列解决方案咨询。</span>
-		</div>
-		<div class="liucheng2">
-			<div>
-				<img th:src="@{/img/2.png}">
-			</div>
-			<p>合约立项</p>
-			<span>细化需求，制作完善的项目开发文档与项目进度计划书。</span>
-		</div>
-		<div class="liucheng2">
-			<div>
-				<img th:src="@{/img/3.png}">
-			</div>
-			<p>交互/视觉/程序设计</p>
-			<span>优秀的设计团队，对完美的设计有着执着的坚持和追求，严格把控每一个细节。</span>
-		</div>
-		<div class="liucheng2">
-			<div>
-				<img th:src="@{/img/4.png}">
-			</div>
-			<p>前端/后端/程序开发</p>
-			<span>为您提供全面的需求策划服务，制作完善的项目书，需求书、策划书。</span>
-		</div>
-		<div class="liucheng2">
-			<div>
-				<img th:src="@{/img/5.png}">
-			</div>
-			<p>测试上线</p>
-			<span>我们对的产品交付遵循严格的测试标准，不达要求绝不交付。</span>
-		</div>
-	</div>
+    <h3>严格把控每一项流程</h3>
+    <div class="liucheng1">
+        <div class="liucheng2">
+            <div>
+                <img th:src="@{/img/1.png}">
+            </div>
+            <p>需求调研</p>
+            <span>为您提供全面的需求策划服务，针对需求提供一系列解决方案咨询。</span>
+        </div>
+        <div class="liucheng2">
+            <div>
+                <img th:src="@{/img/2.png}">
+            </div>
+            <p>合约立项</p>
+            <span>细化需求，制作完善的项目开发文档与项目进度计划书。</span>
+        </div>
+        <div class="liucheng2">
+            <div>
+                <img th:src="@{/img/3.png}">
+            </div>
+            <p>交互/视觉/程序设计</p>
+            <span>优秀的设计团队，对完美的设计有着执着的坚持和追求，严格把控每一个细节。</span>
+        </div>
+        <div class="liucheng2">
+            <div>
+                <img th:src="@{/img/4.png}">
+            </div>
+            <p>前端/后端/程序开发</p>
+            <span>为您提供全面的需求策划服务，制作完善的项目书，需求书、策划书。</span>
+        </div>
+        <div class="liucheng2">
+            <div>
+                <img th:src="@{/img/5.png}">
+            </div>
+            <p>测试上线</p>
+            <span>我们对的产品交付遵循严格的测试标准，不达要求绝不交付。</span>
+        </div>
+    </div>
 </div>
 
 <!--伙伴  伙伴  伙伴  伙伴  伙伴  伙伴  伙伴  伙伴  -->
 <div class="hezuo">
-	<h3 class="biaoti">麦贝合作伙伴</h3>
-	<div class="hezuo1">
-		<div th:each="partner : ${partners}">
+    <h3 class="biaoti">麦贝合作伙伴</h3>
+    <div class="hezuo1">
+        <div th:each="partner : ${partners}">
             <a th:href="@{${partner.link}}" target="_blank">
                 <img th:src="${partner.imgLink}">
                 <p th:text="${partner.imgName}">中国邮政</p>
             </a>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <!--di-->
 <div class="di">
-	<div class="di-kuang">
-		<div class="di-kuang-left">
-			<div class="di-kuang-left1">
-				<a th:href="@{/index}">网站首页</a>
-				<a th:href="@{/server}">客户案例</a>
-				<a href="3fangan.html">方案定制</a>
-				<a th:href="@{/human/list}">招贤纳士</a>
-				<a th:href="@{/index/contact}">联系我们</a>
-			</div>
+    <div class="di-kuang">
+        <div class="di-kuang-left">
+            <div class="di-kuang-left1">
+                <a th:href="@{/index}">网站首页</a>
+                <a th:href="@{/server}">客户案例</a>
+                <a href="3fangan.html">方案定制</a>
+                <a th:href="@{/human/list}">招贤纳士</a>
+                <a th:href="@{/index/contact}">联系我们</a>
+            </div>
             <p>友情链接</p>
             <div class="di-kuang-left2">
                 <div th:each="links : ${friends}" style="float: left">
                     <a th:text="${links.title}" th:href="${links.href}"></a>
                 </div>
             </div>
-		</div>
+        </div>
         <div class="di-kuang-right">
             <h1 th:text="${companys.companyName}"></h1>
             <p th:text="${companys.address}"></p>
             <p th:text="${companys.phone}"></p>
         </div>
-	</div>
+    </div>
 
-	<div class="di1">
-		<span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
-	</div>
+    <div class="di1">
+        <span>Copyright © 2019 山东麦贝 All Rights Reserved</span>
+    </div>
 </div>
 <!--float float float float float float float float float float float-->
 <div class="float">
-	<div class="float1">
-		<img th:src="@{/img/ls1.png}">
-	</div>
-	<div class="float2">
-		<img th:src="@{/img/lw1.png}">
-	</div>
+    <div class="float1">
+        <img th:src="@{/img/ls1.png}">
+    </div>
+    <div class="float2">
+        <img th:src="@{/img/lw1.png}">
+    </div>
 </div>
 
 <div class="bg1"></div>
 
 
-		
-<script type="text/javascript" th:src="@{/js/swiper.min.js}" ></script>
-<script>        
-  var mySwiper = new Swiper ('.swiper-container', {
-    direction: 'horizontal', // 垂直切换选项
-    loop: true, // 循环模式选项
-    // 如果需要前进后退按钮
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-	speed:1000,
- 	 autoplay : {
-	    delay:5000
-	  },
-  })
-  </script>
+<script type="text/javascript" th:src="@{/js/swiper.min.js}"></script>
 <script>
-    onea.onclick=function(){
-        onea.className="team2"
-        twoa.className="team1";
-        threea.className="team1"
-        foura.className="team1"
-        one.style.display="block";
-        two.style.display="none";
-        three.style.display="none";
-        four.style.display="none";
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal', // 垂直切换选项
+        loop: true, // 循环模式选项
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        speed: 1000,
+        autoplay: {
+            delay: 5000
+        },
+    })
+</script>
+<script>
+    onea.onclick = function () {
+        onea.className = "team2"
+        twoa.className = "team1";
+        threea.className = "team1"
+        foura.className = "team1"
+        one.style.display = "block";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
     }
-    twoa.onclick=function(){
-        onea.className="team1"
-        twoa.className="team2";
-        threea.className="team1"
-        foura.className="team1"
-        one.style.display="none";
-        two.style.display="block";
-        three.style.display="none";
-        four.style.display="none";
+    twoa.onclick = function () {
+        onea.className = "team1"
+        twoa.className = "team2";
+        threea.className = "team1"
+        foura.className = "team1"
+        one.style.display = "none";
+        two.style.display = "block";
+        three.style.display = "none";
+        four.style.display = "none";
     }
-    threea.onclick=function(){
-        onea.className="team1"
-        twoa.className="team1";
-        threea.className="team2"
-        foura.className="team1"
-        one.style.display="none";
-        two.style.display="none";
-        three.style.display="block";
-        four.style.display="none";
+    threea.onclick = function () {
+        onea.className = "team1"
+        twoa.className = "team1";
+        threea.className = "team2"
+        foura.className = "team1"
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "block";
+        four.style.display = "none";
     }
-    foura.onclick=function(){
-        onea.className="team1"
-        twoa.className="team1";
-        threea.className="team1"
-        foura.className="team2"
-        one.style.display="none";
-        two.style.display="none";
-        three.style.display="none";
-        four.style.display="block";
+    foura.onclick = function () {
+        onea.className = "team1"
+        twoa.className = "team1";
+        threea.className = "team1"
+        foura.className = "team2"
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "block";
     }
 </script>
-	</body>
+</body>
 </html>
